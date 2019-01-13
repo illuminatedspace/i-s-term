@@ -2,20 +2,28 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
+const Nav = styled.nav`
+  background-color: #a89bf7;
+`
+
 const NavLi = styled.li`
   list-style-type: none;
   display: inline;
   margin: 5px;
 `
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`
+
 const Header = ({ siteTitle, menuLinks }) => (
-  <nav>
+  <Nav>
     {menuLinks.map(({ link, name }) => (
       <NavLi key={name}>
-        <Link to={link}>{name}</Link>
+        <StyledLink to={link}>{name}</StyledLink>
       </NavLi>
     ))}
-  </nav>
+  </Nav>
 )
 
 export default Header
