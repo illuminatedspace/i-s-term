@@ -6,20 +6,18 @@ class TextInput extends React.Component {
   }
 
   handleChange = event => {
-    console.log('EVEE')
     this.setState({ textInput: event.target.value })
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.addLine(this.textInput)
+    this.props.parseCommand(this.state.textInput)
   }
 
   render() {
-    console.log('ONYX', this.state.textInput)
     return (
       <div>
-        <form onSubmit={event => this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             id="command-line"
@@ -31,10 +29,5 @@ class TextInput extends React.Component {
     )
   }
 }
-
-// props = {
-//   addLine: addLinefunction
-//   handleSubmit: handleSubmitFunction
-// }
 
 export default TextInput
