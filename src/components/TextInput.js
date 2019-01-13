@@ -31,7 +31,7 @@ class TextInput extends React.Component {
           <StyledInput
             type="text"
             id="command-line"
-            placeholder="what would you like to do?"
+            placeholder="> what would you like to do?"
             onChange={this.handleChange}
           />
         </form>
