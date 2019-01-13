@@ -5,7 +5,7 @@ import CommandLine from '../components/CommandLine'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi Joel and Kevin!</h1>
+    <h1>Hi Twitch!</h1>
     <CommandLine />
   </Layout>
 )
