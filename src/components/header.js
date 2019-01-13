@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { background, purple, yellow } from '../styles/colors'
 
 const Nav = styled.nav`
-  background-color: #a89bf7;
+  background-color: ${purple.light};
 `
 
 const NavLi = styled.li`
@@ -14,6 +15,15 @@ const NavLi = styled.li`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  color: ${background};
+
+  :active {
+    color: #fff;
+  }
+
+  :hover {
+    color: ${yellow.medium};
+  }
 `
 
 const Header = ({ siteTitle, menuLinks }) => (
