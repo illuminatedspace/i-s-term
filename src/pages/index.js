@@ -1,11 +1,10 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import CommandLine from '../components/CommandLine'
+import CommandLine from '../components/CommandLine/index'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi Twitch!</h1>
     <CommandLine />
   </Layout>
 )
