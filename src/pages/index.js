@@ -1,11 +1,11 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import CommandLine from '../components/CommandLine/index'
+import Main from '../components/Main'
 
 const IndexPage = () => (
   <Layout>
-    <CommandLine />
+    <Main />
   </Layout>
 )
 
