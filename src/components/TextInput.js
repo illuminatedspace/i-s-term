@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { purple, yellow } from '../styles/colors'
+import { purple, yellow, black } from '../styles/colors'
 
 const StyledInput = styled.input`
   background: ${purple.light};
   border: none;
-  color: #fff;
+  color: ${black};
   width: 100%;
   padding: 0 1em;
+  font-weight: bold;
 `
 
 class TextInput extends React.Component {
