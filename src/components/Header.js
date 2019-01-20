@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
+
 import { background, purple, yellow } from '../styles/colors'
 
 const Nav = styled.nav`
@@ -26,6 +28,32 @@ const StyledLink = styled(Link)`
   }
 `
 
+const HeaderWrapper = ({ children }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+            menuLinks {
+              name
+              link
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <>
+        <Header
+          menuLinks={data.site.siteMetadata.menuLinks}
+          siteTitle={data.site.siteMetadata.title}
+        />
+      </>
+    )}
+  />
+)
+
 const Header = ({ siteTitle, menuLinks }) => (
   <Nav>
     {menuLinks.map(({ link, name }) => (
@@ -36,4 +64,4 @@ const Header = ({ siteTitle, menuLinks }) => (
   </Nav>
 )
 
-export default Header
+export default HeaderWrapper
