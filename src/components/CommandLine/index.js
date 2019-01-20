@@ -5,8 +5,7 @@ import TextInput from '../TextInput'
 import getResponse from './getResponse'
 import { purple } from '../../styles/colors'
 
-const StyledDiv = styled.div`
-  border: 1px solid ${purple.light};
+const TextDisplayDiv = styled.div`
   padding: 1em;
 `
 
@@ -33,13 +32,16 @@ class CommandLine extends React.Component {
 
   render() {
     return (
-      <StyledDiv>
-        <h1>Hi Twitch!</h1>
-        {this.state.lines.map((line, index) => (
-          <p key={index}>{`> ${line}`}</p>
-        ))}
+      <div>
+        <TextDisplayDiv>
+          <h1>Hi Twitch!</h1>
+          {this.state.lines.map((line, index) => (
+            <p key={index}>{`> ${line}`}</p>
+          ))}
+        </TextDisplayDiv>
+
         <TextInput parseCommand={this.parseCommand} />
-      </StyledDiv>
+      </div>
     )
   }
 }
