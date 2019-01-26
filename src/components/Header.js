@@ -31,10 +31,9 @@ const StyledLink = styled(Link)`
 const HeaderWrapper = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query MenuLinksQuery {
         site {
           siteMetadata {
-            title
             menuLinks {
               name
               link
