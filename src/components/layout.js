@@ -2,9 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { ThemeProvider } from 'styled-components'
 
 import Header from './Header'
 import './layout.css'
+import { mainTheme } from '../styles'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -36,7 +38,9 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          {children}
+          <ThemeProvider theme={mainTheme}>
+            <>{children}</>
+          </ThemeProvider>
         </div>
       </>
     )}
