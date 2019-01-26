@@ -28,7 +28,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const HeaderWrapper = ({ children }) => (
+const Header = ({ children }) => (
   <StaticQuery
     query={graphql`
       query MenuLinksQuery {
@@ -42,25 +42,20 @@ const HeaderWrapper = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <Header
-          menuLinks={data.site.siteMetadata.menuLinks}
-          siteTitle={data.site.siteMetadata.title}
-        />
-      </>
+    render={({
+      site: {
+        siteMetadata: { menuLinks },
+      },
+    }) => (
+      <Nav>
+        {menuLinks.map(({ link, name }) => (
+          <NavLi key={name}>
+            <StyledLink to={link}>{name}</StyledLink>
+          </NavLi>
+        ))}
+      </Nav>
     )}
   />
 )
 
-const Header = ({ siteTitle, menuLinks }) => (
-  <Nav>
-    {menuLinks.map(({ link, name }) => (
-      <NavLi key={name}>
-        <StyledLink to={link}>{name}</StyledLink>
-      </NavLi>
-    ))}
-  </Nav>
-)
-
-export default HeaderWrapper
+export default Header
