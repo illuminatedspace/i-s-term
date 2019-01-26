@@ -1,9 +1,12 @@
 # Things to Look Into
 
 ## 1/19/2019
+
 ### WHERE IS THIS EXTRA SPACE COMING FROM?!?!?!
 
-There is a space under the text input component in the Main component but it's not margin or padding?
+--There is a space under the text input component in the Main component but it's not margin or padding?--
+It was coming from the `<form/>`.
+It's fixed now!!!
 
 ### Graph QL Conventions
 
