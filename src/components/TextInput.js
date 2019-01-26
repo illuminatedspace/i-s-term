@@ -11,6 +11,10 @@ const StyledInput = styled.input`
   font-weight: bold;
 `
 
+const StyledForm = styled.form`
+  margin-bottom: 0;
+`
+
 class TextInput extends React.Component {
   state = {
     textInput: '',
@@ -28,14 +32,14 @@ class TextInput extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <StyledForm onSubmit={this.handleSubmit}>
           <StyledInput
             type="text"
             id="command-line"
             placeholder="> what would you like to do?"
             onChange={this.handleChange}
           />
-        </form>
+        </StyledForm>
       </>
     )
   }
