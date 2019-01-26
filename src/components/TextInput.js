@@ -1,4 +1,15 @@
 import React from 'react'
+import styled from 'styled-components'
+import { purple, yellow, black } from '../styles/colors'
+
+const StyledInput = styled.input`
+  background: ${purple.light};
+  border: none;
+  color: ${black};
+  width: 100%;
+  padding: 0 1em;
+  font-weight: bold;
+`
 
 class TextInput extends React.Component {
   state = {
@@ -6,24 +17,22 @@ class TextInput extends React.Component {
   }
 
   handleChange = event => {
-    console.log('EVEE')
     this.setState({ textInput: event.target.value })
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.addLine(this.textInput)
+    this.props.parseCommand(this.state.textInput)
   }
 
   render() {
-    console.log('ONYX', this.state.textInput)
     return (
       <div>
-        <form onSubmit={event => this.handleSubmit}>
-          <input
+        <form onSubmit={this.handleSubmit}>
+          <StyledInput
             type="text"
             id="command-line"
-            placeholder="what would you like to do?"
+            placeholder="> what would you like to do?"
             onChange={this.handleChange}
           />
         </form>
@@ -31,10 +40,5 @@ class TextInput extends React.Component {
     )
   }
 }
-
-// props = {
-//   addLine: addLinefunction
-//   handleSubmit: handleSubmitFunction
-// }
 
 export default TextInput
