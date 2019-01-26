@@ -27,7 +27,7 @@ class TextInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <form onSubmit={this.handleSubmit}>
           <StyledInput
             type="text"
@@ -36,7 +36,7 @@ class TextInput extends React.Component {
             onChange={this.handleChange}
           />
         </form>
-      </div>
+      </>
     )
   }
 }

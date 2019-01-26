@@ -32,7 +32,7 @@ class CommandLine extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <TextDisplayDiv>
           <h1>Hi Twitch!</h1>
           {this.state.lines.map((line, index) => (
@@ -41,7 +41,7 @@ class CommandLine extends React.Component {
         </TextDisplayDiv>
 
         <TextInput parseCommand={this.parseCommand} />
-      </div>
+      </>
     )
   }
 }
