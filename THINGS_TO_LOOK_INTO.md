@@ -1,5 +1,12 @@
 # Things to Look Into
 
+## 2/2/2019
+
+### How to change styling on placeholder in input text component
+
+- tried using both `::placeholder` and `::-webkit-input-placeholder`
+  https://css-tricks.com/almanac/selectors/p/placeholder/
+
 ## 1/19/2019
 
 ### WHERE IS THIS EXTRA SPACE COMING FROM?!?!?!
@@ -21,7 +28,7 @@ It's fixed now!!!
 - `<> </>`
 
 > Fragments let you group a list of children without adding extra nodes to the DOM.
-https://reactjs.org/docs/fragments.html
+> https://reactjs.org/docs/fragments.html
 
 ### Structure for Global Styles with Styled Components
 
@@ -39,22 +46,31 @@ And you can use nested themes if you want:
 https://www.styled-components.com/docs/advanced#function-themes
 
 ## Notes
+
 ### Testing
+
 Jest plugin for styled-components
 https://www.styled-components.com/docs/tooling#stylelint
 
 ### Linting
+
 #### Linter for Styled Components Template Literal-ed CSS
+
 https://www.styled-components.com/docs/tooling#stylelint
 
 ### Babel Configs
+
 #### Styled Components Babel Plugin
+
 https://www.styled-components.com/docs/tooling#babel-plugin
-* Better Template Literal Transpilation
-* Minification
-* Dead code elimination
+
+- Better Template Literal Transpilation
+- Minification
+- Dead code elimination
 
 ### Security
+
 #### Protecting against CSS injection with Styled Components
+
 https://www.styled-components.com/docs/advanced#function-themes
 They recommend a polyfill babel plugin
