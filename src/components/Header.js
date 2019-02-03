@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import { dragHandleClassName } from '../styles'
 
 const Nav = styled.nav`
   background-color: ${props => props.theme.accent.primary};
@@ -52,7 +53,7 @@ const Header = ({ children }) => (
         siteMetadata: { menuLinks },
       },
     }) => (
-      <Nav>
+      <Nav className={dragHandleClassName}>
         {menuLinks.map(({ link, name }) => (
           <NavLi key={name}>
             <StyledLink to={link}>{name}</StyledLink>
