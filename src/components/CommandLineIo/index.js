@@ -7,6 +7,7 @@ import { purple } from '../../styles/colors';
 
 const TextDisplayDiv = styled.div`
   padding: 1em;
+  background: ${props => props.theme.background};
 `;
 
 class CommandLineIo extends React.Component {
