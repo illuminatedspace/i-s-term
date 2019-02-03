@@ -17,6 +17,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${props => props.theme.background};
 
+  // This isn't working
   :active {
     color: #fff;
   }
