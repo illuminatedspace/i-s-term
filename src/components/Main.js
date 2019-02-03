@@ -7,6 +7,7 @@ import Header from './Header';
 
 const StyledDiv = styled.div`
   border: 1px solid ${purple.light};
+  font-family: ${props => props.theme.fontFamily};
 `;
 
 const Main = () => {
