@@ -11,6 +11,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
+    "react-rnd": "^9.1.1",
     "styled-components": "^4.1.2",
     "typeface-inconsolata": "0.0.54"
   },
