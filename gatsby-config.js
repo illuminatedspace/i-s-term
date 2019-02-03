@@ -18,10 +18,6 @@ module.exports = {
         name: 'about',
         link: '/about',
       },
-      {
-        name: 'projects',
-        link: '/projects',
-      },
     ],
   },
   plugins: [
@@ -40,4 +36,4 @@ module.exports = {
     },
     'gatsby-plugin-offline',
   ],
-}
+};
