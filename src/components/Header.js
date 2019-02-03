@@ -11,6 +11,7 @@ const NavLi = styled.li`
   list-style-type: none;
   display: inline;
   padding: 0 1em;
+  border: 0.1em solid rgba(0, 0, 0, 0);
 
   :hover {
     background: ${props => props.theme.background};
