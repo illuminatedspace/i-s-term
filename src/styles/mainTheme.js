@@ -10,6 +10,7 @@ const mainTheme = {
   accent: {
     primary: purple.light,
   },
+  fontFamily: 'inconsolata',
 }
 
 export default mainTheme
