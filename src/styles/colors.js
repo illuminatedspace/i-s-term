@@ -5,6 +5,7 @@ export const white = '#fdfdfd'
 
 export const purple = {
   light: '#8f8aad',
+  medium: '#4E4488',
 }
 
 export const yellow = {

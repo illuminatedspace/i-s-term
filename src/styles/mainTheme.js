@@ -9,6 +9,7 @@ const mainTheme = {
   highlight: yellow.medium,
   accent: {
     primary: purple.light,
+    secondary: purple.medium,
   },
   fontFamily: 'inconsolata',
 }

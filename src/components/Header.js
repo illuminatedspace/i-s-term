@@ -10,7 +10,16 @@ const Nav = styled.nav`
 const NavLi = styled.li`
   list-style-type: none;
   display: inline;
-  margin: 5px;
+  padding: 0 1em;
+
+  :hover {
+    background: ${props => props.theme.background};
+    border: 0.1em inset ${props => props.theme.accent.secondary};
+
+    a {
+      color: ${props => props.theme.highlight};
+    }
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -20,10 +29,6 @@ const StyledLink = styled(Link)`
   // This isn't working
   :active {
     color: #fff;
-  }
-
-  :hover {
-    color: ${props => props.theme.highlight};
   }
 `
 
