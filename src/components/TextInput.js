@@ -9,6 +9,11 @@ const StyledInput = styled.input`
   width: 100%;
   padding: 0 1em;
   font-weight: bold;
+
+  // Not working
+  ::placeholder: {
+    color: white;
+  }
 `
 
 const StyledForm = styled.form`
