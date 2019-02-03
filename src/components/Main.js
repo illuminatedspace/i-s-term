@@ -1,23 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import CommandLine from './CommandLine'
-import { purple } from '../styles/colors'
-import Header from './Header'
+import CommandLineIo from './CommandLineIo';
+import { purple } from '../styles/colors';
+import Header from './Header';
 
 const StyledDiv = styled.div`
   border: 1px solid ${purple.light};
-  // margin: 0;
-  // padding: 0;
-`
+`;
 
 const Main = () => {
   return (
     <StyledDiv>
       <Header />
-      <CommandLine />
+      <CommandLineIo />
     </StyledDiv>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

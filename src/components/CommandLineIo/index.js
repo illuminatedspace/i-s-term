@@ -1,18 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import TextInput from '../TextInput'
-import getResponse from './getResponse'
-import { purple } from '../../styles/colors'
+import TextInput from '../TextInput';
+import getResponse from './getResponse';
+import { purple } from '../../styles/colors';
 
 const TextDisplayDiv = styled.div`
   padding: 1em;
-`
+`;
 
-class CommandLine extends React.Component {
+class CommandLineIo extends React.Component {
   state = {
     lines: ['hello world', 'print hello', ''],
-  }
+  };
 
   /**
    * takes a line or array of lines and adds it to this.state.lines
@@ -20,15 +20,15 @@ class CommandLine extends React.Component {
    * @fires setState
    */
   addLine = line => {
-    this.setState({ lines: this.state.lines.concat(line) })
-  }
+    this.setState({ lines: this.state.lines.concat(line) });
+  };
 
   parseCommand = command => {
     // match command to response (switch)
-    const response = getResponse(command)
+    const response = getResponse(command);
     // add line for both command and response
-    this.addLine([command, response])
-  }
+    this.addLine([command, response]);
+  };
 
   render() {
     return (
@@ -42,8 +42,8 @@ class CommandLine extends React.Component {
 
         <TextInput parseCommand={this.parseCommand} />
       </>
-    )
+    );
   }
 }
 
-export default CommandLine
+export default CommandLineIo;
