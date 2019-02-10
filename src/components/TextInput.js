@@ -20,9 +20,11 @@ const StyledForm = styled.form`
   margin-bottom: 0;
 `
 
+const defaultState = ''
+
 class TextInput extends React.Component {
   state = {
-    textInput: '',
+    textInput: defaultState,
   }
 
   handleChange = event => {
@@ -32,7 +34,7 @@ class TextInput extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.parseCommand(this.state.textInput)
-    this.setState({ textInput: '' })
+    this.setState({ textInput: defaultState })
   }
 
   render() {
