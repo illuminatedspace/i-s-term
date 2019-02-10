@@ -32,6 +32,7 @@ class TextInput extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.parseCommand(this.state.textInput)
+    this.setState({ textInput: '' })
   }
 
   render() {
@@ -43,6 +44,7 @@ class TextInput extends React.Component {
             id="command-line"
             placeholder="> what would you like to do?"
             onChange={this.handleChange}
+            value={this.state.textInput}
           />
         </StyledForm>
       </>
