@@ -42,25 +42,13 @@ class CommandLineIo extends React.Component {
   /**
    * Renders blocks of texts from an array of string arrays
    */
-  breakTextOnNewLines = array =>
-    array.map(string => {
-      // 'hello.\nThis is a new line.'
-      // ['hello', 'This is a new line.'];
-      // 'hello<br/>This is a new line.'
-      // <p>hello</p><p>This is a new line</p>
+  breakTextOnNewLines = linesArray =>
+    linesArray.map((stringArray, index) => {
+      const textBlockArray = stringArray.map((string, index) => (
+        <NoMarginBottomParagraph key={index}>{string}</NoMarginBottomParagraph>
+      ))
 
-      const joinedWithNewLine = array.join('\n')
-      const splitString = string.split('\n')
-
-      // return splitString.join(<br />)
-
-      return (
-        <>
-          {splitString.map(line => (
-            <p>{line}</p>
-          ))}
-        </>
-      )
+      return <MarginBottomDiv key={index}>{textBlockArray}</MarginBottomDiv>
     })
 
   render() {
