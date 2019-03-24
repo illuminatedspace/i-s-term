@@ -5,6 +5,11 @@ import TextInput from '../TextInput'
 import getResponse from './getResponse'
 import { purple } from '../../styles/colors'
 
+/* TODO:
+[x] 1. Refactor to handle string array state.lines
+[] 2. Wrap inputted text in arrays before storing in state.lines
+*/
+
 const TextDisplayDiv = styled.div`
   padding: 1em;
   background: ${props => props.theme.background};
@@ -20,7 +25,11 @@ const NoMarginBottomParagraph = styled.p`
 
 class CommandLineIo extends React.Component {
   state = {
-    lines: ['hello world', 'print hello', ''],
+    lines: [
+      ['hello world'],
+      ['print hello'],
+      ['help, -h', 'shows all commands avalible'],
+    ],
   }
 
   /**
