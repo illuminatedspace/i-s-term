@@ -10,6 +10,14 @@ const TextDisplayDiv = styled.div`
   background: ${props => props.theme.background};
 `
 
+const MarginBottomDiv = styled.div`
+  margin-bottom: 1em;
+`
+
+const NoMarginBottomParagraph = styled.p`
+  margin-bottom: 0;
+`
+
 class CommandLineIo extends React.Component {
   state = {
     lines: ['hello world', 'print hello', ''],
