@@ -40,8 +40,7 @@ class CommandLineIo extends React.Component {
   }
 
   /**
-   * Splits strings on \n characters and replaces them
-   * wraps them in <p/> tags.
+   * Renders blocks of texts from an array of string arrays
    */
   breakTextOnNewLines = array =>
     array.map(string => {
