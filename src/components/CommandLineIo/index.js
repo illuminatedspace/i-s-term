@@ -52,7 +52,6 @@ class CommandLineIo extends React.Component {
     })
 
   render() {
-    // const lines = this.breakTextOnNewLines(this.state.lines)
     return (
       <>
         <TextDisplayDiv>
