@@ -37,8 +37,8 @@ class CommandLineIo extends React.Component {
    * @param {string|array} line line or lines to add
    * @fires setState
    */
-  addLine = line => {
-    this.setState({ lines: this.state.lines.concat(line) })
+  addLine = lines => {
+    this.setState({ lines: [...this.state.lines, lines] })
   }
 
   parseCommand = command => {
