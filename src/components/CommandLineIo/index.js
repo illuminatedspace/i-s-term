@@ -34,7 +34,7 @@ class CommandLineIo extends React.Component {
 
   /**
    * takes a line or array of lines and adds it to this.state.lines
-   * @param {string|array} line line or lines to add
+   * @param {array} lines lines to add
    * @fires setState
    */
   addLine = lines => {
