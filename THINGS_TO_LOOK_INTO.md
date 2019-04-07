@@ -1,5 +1,12 @@
 # Things to Look Into
 
+## 4/6/2019
+
+### Figure out how to keep window scrolled to bottom of text display div
+
+- possibly use [react-scroll](https://github.com/fisshy/react-scroll/tree/master/modules/mixins). Seems kind of big for functionality I want
+- Look for another library?
+
 ## 2/2/2019
 
 ### How to change styling on placeholder in input text component

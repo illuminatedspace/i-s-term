@@ -8,6 +8,8 @@ import { purple } from '../../styles/colors'
 const TextDisplayDiv = styled.div`
   padding: 1em;
   background: ${props => props.theme.background};
+  overflow-y: scroll;
+  height: 10em;
 `
 
 const MarginBottomDiv = styled.div`
