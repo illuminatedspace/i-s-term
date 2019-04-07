@@ -17,26 +17,23 @@ const MarginBottomDiv = styled.div`
 const NoMarginBottomParagraph = styled.p`
   margin-bottom: 0;
 `
+const commandPrefix = '>'
 
 class CommandLineIo extends React.Component {
   state = {
     lines: [['hello world']],
   }
 
-  /**
-   * takes a line or array of lines and adds it to this.state.lines
-   * @param {array} lines lines to add
-   * @fires setState
-   */
-  addLine = lines => {
-    this.setState({ lines: [...this.state.lines, lines] })
-  }
+  prefixCommand = command => `${commandPrefix} ${command}`
 
   parseCommand = command => {
     // match command to response (switch)
     const response = getResponse(command)
     // add line for both command and response
-    this.setState({ lines: [...this.state.lines, [command], ...response] })
+    const prefixedCommand = this.prefixCommand(command)
+    this.setState({
+      lines: [...this.state.lines, [prefixedCommand], ...response],
+    })
   }
 
   /**
