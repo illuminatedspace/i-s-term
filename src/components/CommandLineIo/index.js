@@ -20,11 +20,7 @@ const NoMarginBottomParagraph = styled.p`
 
 class CommandLineIo extends React.Component {
   state = {
-    lines: [
-      ['hello world'],
-      ['print hello'],
-      ['help, -h', 'shows all commands avalible'],
-    ],
+    lines: [['hello world']],
   }
 
   /**
