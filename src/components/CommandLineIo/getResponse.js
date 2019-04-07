@@ -25,15 +25,13 @@ const getResponse = command => {
         help -h
         shows all commands available
       */
-      const helpText = Object.values(commands).reduce(
+      return Object.values(commands).reduce(
         (acc, { name, flag, description }) => {
           const commandEntry = [`${name}, ${flag}`, description]
-          return acc.concat(commandEntry)
+          return [...acc, commandEntry]
         },
-        ['Here are all the commands available:']
+        [['Here are all the commands available:']]
       )
-
-      return helpText.join('\n')
 
     default:
       return 'Sorry. I did not understand that command.\nType "help" to see a list of accepted commands'
