@@ -34,7 +34,12 @@ const getResponse = command => {
       )
 
     default:
-      return 'Sorry. I did not understand that command.\nType "help" to see a list of accepted commands'
+      return [
+        [
+          'Sorry, I did not understand that command.',
+          'Type "help" to see a list of accepted commands.',
+        ],
+      ]
   }
 }
 
