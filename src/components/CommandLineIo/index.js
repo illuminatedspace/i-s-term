@@ -45,7 +45,7 @@ class CommandLineIo extends React.Component {
     // match command to response (switch)
     const response = getResponse(command)
     // add line for both command and response
-    this.addLine([command, response])
+    this.setState({ lines: [...this.state.lines, [command], ...response] })
   }
 
   /**
