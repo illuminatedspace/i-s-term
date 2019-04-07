@@ -5,12 +5,6 @@ import TextInput from '../TextInput'
 import getResponse from './getResponse'
 import { purple } from '../../styles/colors'
 
-/* TODO:
-[x] 1. Refactor to handle string array state.lines
-[x] 2. Wrap inputted text in arrays before storing in state.lines
-[x] 3. Refactor responses to have new lines
-*/
-
 const TextDisplayDiv = styled.div`
   padding: 1em;
   background: ${props => props.theme.background};
