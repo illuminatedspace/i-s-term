@@ -15,9 +15,19 @@ const NoMarginBottomParagraph = styled.p`
 
 const TextDisplayDiv = styled.div`
   padding: 1em;
-  background: ${props => props.theme.background};
+  background-color: ${props => props.theme.background};
   overflow-y: scroll;
   height: 10em;
+  ::-webkit-scrollbar {
+    background-color: red;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: ${props => props.theme.background};
+    border-left: 1px solid ${props => props.theme.accent.primary};
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${props => props.theme.accent.secondary};
+  }
 `
 
 /**
