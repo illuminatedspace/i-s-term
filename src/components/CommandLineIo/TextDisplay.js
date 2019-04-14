@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useRef, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import useStayScrolled from 'react-stay-scrolled'
+
 import Layout from '../layout'
 
 const MarginBottomDiv = styled.div`
@@ -31,9 +33,19 @@ const breakTextOnNewLines = linesArray =>
   })
 
 const TextDisplay = ({ lines }) => {
+  const textDisplayDivRef = useRef(null)
+  const { stayScrolled } = useStayScrolled(textDisplayDivRef)
+
+  useLayoutEffect(
+    () => {
+      stayScrolled()
+    },
+    [lines]
+  )
+
   if (lines) {
     return (
-      <TextDisplayDiv>
+      <TextDisplayDiv ref={textDisplayDivRef}>
         <h1>Hi Twitch!</h1>
         {breakTextOnNewLines(lines)}
       </TextDisplayDiv>
