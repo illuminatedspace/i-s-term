@@ -2,7 +2,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background-color: #000;
+  background: linear-gradient(90deg, rgb(99, 208, 211), rgb(169, 118, 255));
 }
 body {
   margin: 0;
