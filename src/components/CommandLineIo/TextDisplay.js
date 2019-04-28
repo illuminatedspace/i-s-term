@@ -46,12 +46,9 @@ const TextDisplay = ({ lines }) => {
   const textDisplayDivRef = useRef(null)
   const { stayScrolled } = useStayScrolled(textDisplayDivRef)
 
-  useLayoutEffect(
-    () => {
-      stayScrolled()
-    },
-    [lines]
-  )
+  useLayoutEffect(() => {
+    stayScrolled()
+  }, [lines])
 
   if (lines) {
     return (
