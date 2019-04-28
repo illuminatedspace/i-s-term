@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
 
-import Header from './Header'
 import './layout.css'
 import inconsolata from 'typeface-inconsolata'
 import { mainTheme } from '../styles'
