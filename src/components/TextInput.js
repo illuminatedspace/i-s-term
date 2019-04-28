@@ -1,14 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
-import { purple, yellow, black } from '../styles/colors'
+import { purple, yellow, black, background } from '../styles/colors'
+
+const FlexWrapperDiv = styled.div`
+  display: flex;
+  background: ${background};
+  border-top: 1px solid ${purple.light};
+`
+
+const InputPrefixDiv = styled.div`
+  flex-grow: 0.02;
+  padding: 0 0 0 1em;
+  box-sizing: border-box;
+`
+const TextInputWrapperDiv = styled.div`
+  flex-grow: 1;
+`
 
 const StyledInput = styled.input`
-  background: ${purple.light};
+  background: rgba(0, 0, 0, 0);
   border: none;
-  color: ${black};
+  color: ${yellow.medium};
   width: 100%;
-  padding: 0 1em;
-  font-weight: bold;
 
   // Not working
   ::placeholder: {
@@ -39,17 +52,20 @@ class TextInput extends React.Component {
 
   render() {
     return (
-      <>
-        <StyledForm onSubmit={this.handleSubmit}>
-          <StyledInput
-            type="text"
-            id="command-line"
-            placeholder="> what would you like to do?"
-            onChange={this.handleChange}
-            value={this.state.textInput}
-          />
-        </StyledForm>
-      </>
+      <FlexWrapperDiv>
+        <InputPrefixDiv>></InputPrefixDiv>
+        <TextInputWrapperDiv>
+          <StyledForm onSubmit={this.handleSubmit}>
+            <StyledInput
+              type="text"
+              id="command-line"
+              placeholder="what would you like to do?"
+              onChange={this.handleChange}
+              value={this.state.textInput}
+            />
+          </StyledForm>
+        </TextInputWrapperDiv>
+      </FlexWrapperDiv>
     )
   }
 }

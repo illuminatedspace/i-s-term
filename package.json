@@ -5,14 +5,15 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "eslint-plugin-prettier": "^3.0.1",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.1.0",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
     "react-rnd": "^9.1.1",
+    "react-stay-scrolled": "^6.0.0",
     "styled-components": "^4.1.2",
     "typeface-inconsolata": "0.0.54"
   },
