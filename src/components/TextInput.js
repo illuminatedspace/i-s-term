@@ -52,7 +52,7 @@ class TextInput extends React.Component {
   render() {
     return (
       <FlexWrapperDiv>
-        <InputPrefixDiv>></InputPrefixDiv>
+        <InputPrefixDiv>{'>'}</InputPrefixDiv>
         <TextInputWrapperDiv>
           <StyledForm onSubmit={this.handleSubmit}>
             <StyledInput
