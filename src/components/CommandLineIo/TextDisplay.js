@@ -15,7 +15,6 @@ const NoMarginBottomParagraph = styled.p`
 
 const TextDisplayDiv = styled.div`
   padding: 1em;
-  background-color: ${props => props.theme.background};
   overflow-y: scroll;
   height: 10em;
   ::-webkit-scrollbar {

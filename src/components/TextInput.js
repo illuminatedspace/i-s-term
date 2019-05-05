@@ -4,7 +4,6 @@ import { purple, yellow, black, background } from '../styles/color'
 
 const FlexWrapperDiv = styled.div`
   display: flex;
-  background: ${background};
   border-top: ${props => props.theme.window.border};
 `
 
