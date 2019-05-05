@@ -16,6 +16,7 @@ const mainTheme = {
     barText: colors.orange.medium,
     background: colors.purple.darkTransparent,
     border: borders.windowBorder,
+    text: colors.orange.medium,
   },
 
   // deprecate
