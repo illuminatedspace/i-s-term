@@ -1,16 +1,28 @@
-import { yellow, background, purple } from './colors'
+import * as colors from './colors'
 
 const mainTheme = {
   text: {
-    primary: yellow.medium,
-    accent: background,
+    primary: colors.orange.medium,
+    secondary: colors.blue.medium,
+    tertiary: colors.white,
+    quadentiary: colors.pink.medium,
+
+    // deprecated
+    accent: colors.background,
   },
-  background: background,
-  highlight: yellow.medium,
+  window: {
+    bar: colors.purple.dark,
+    barText: colors.orange.medium,
+    background: colors.purple.darkTransparent,
+  },
+
+  // deprecate
   accent: {
-    primary: purple.light,
-    secondary: purple.medium,
+    primary: colors.purple.light,
+    secondary: colors.purple.medium,
   },
+  highlight: colors.yellow.medium,
+  background: colors.background,
   fontFamily: 'inconsolata',
 }
 
