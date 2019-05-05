@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Rnd } from 'react-rnd'
 
 import CommandLineIo from './CommandLineIo'
 import Window from './Window/Window'
