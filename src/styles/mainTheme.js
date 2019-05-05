@@ -1,4 +1,4 @@
-import * as colors from './colors'
+import * as colors from './color'
 
 const mainTheme = {
   text: {

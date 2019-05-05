@@ -1,3 +1,4 @@
+// deprecated
 export const background = '#020a28'
 
 export const black = '#000'
