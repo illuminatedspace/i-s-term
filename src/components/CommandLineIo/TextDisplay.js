@@ -21,8 +21,8 @@ const TextDisplayDiv = styled.div`
     background-color: red;
   }
   ::-webkit-scrollbar-track {
-    background-color: ${props => props.theme.background};
-    border-left: 1px solid ${props => props.theme.accent.primary};
+    background-color: ${props => props.theme.window.bar};
+    border-left: 1px solid ${props => props.theme.window.bar};
   }
   ::-webkit-scrollbar-thumb {
     background-color: ${props => props.theme.accent.secondary};
