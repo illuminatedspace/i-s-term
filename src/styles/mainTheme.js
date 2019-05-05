@@ -1,4 +1,5 @@
 import * as colors from './color'
+import * as borders from './border'
 
 const mainTheme = {
   text: {
@@ -14,6 +15,7 @@ const mainTheme = {
     bar: colors.purple.dark,
     barText: colors.orange.medium,
     background: colors.purple.darkTransparent,
+    border: borders.windowBorder,
   },
 
   // deprecate

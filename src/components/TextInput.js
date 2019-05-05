@@ -5,7 +5,7 @@ import { purple, yellow, black, background } from '../styles/color'
 const FlexWrapperDiv = styled.div`
   display: flex;
   background: ${background};
-  border-top: 1px solid ${purple.light};
+  border-top: ${props => props.theme.window.border};
 `
 
 const InputPrefixDiv = styled.div`

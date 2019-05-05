@@ -6,7 +6,7 @@ import WindowBar from './WindowBar'
 import { dragHandleClassName } from '../../styles'
 
 const StyledDiv = styled.div`
-  border: 2px solid ${props => props.theme.accent.primary};
+  border: ${props => props.theme.window.border};
   font-family: ${props => props.theme.fontFamily};
 `
 
