@@ -18,7 +18,7 @@ const TextDisplayDiv = styled.div`
   overflow-y: scroll;
   height: 10em;
   ::-webkit-scrollbar {
-    background-color: red;
+    background-color: ${props => props.theme.window.bar};
   }
   ::-webkit-scrollbar-track {
     background-color: ${props => props.theme.window.bar};
