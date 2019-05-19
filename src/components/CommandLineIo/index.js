@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import TextInput from '../TextInput'
 import getResponse from './getResponse'
@@ -8,6 +9,15 @@ import Window from '../Window/Window'
 const commandPrefix = '>'
 
 const windowName = 'terminal'
+
+const GridWrapperDiv = styled.div`
+  display: grid;
+  grid-template-rows: auto 2em;
+  grid-template-areas: 'display' 'input';
+  grid-auto-flow: row;
+  grid-row-gap: 0;
+  height: 100%;
+`
 
 class CommandLineIo extends React.Component {
   state = {
@@ -29,8 +39,10 @@ class CommandLineIo extends React.Component {
   render() {
     return (
       <Window windowName={windowName}>
-        <TextDisplay lines={this.state.lines} />
-        <TextInput parseCommand={this.parseCommand} />
+        <GridWrapperDiv>
+          <TextDisplay lines={this.state.lines} />
+          <TextInput parseCommand={this.parseCommand} />
+        </GridWrapperDiv>
       </Window>
     )
   }

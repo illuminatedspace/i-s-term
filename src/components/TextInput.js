@@ -5,6 +5,9 @@ import { purple, yellow, black, background } from '../styles/color'
 const FlexWrapperDiv = styled.div`
   display: flex;
   border-top: ${props => props.theme.window.border};
+  grid-row-start: input;
+  grid-row-end: span 1;
+  align-self: center;
 `
 
 const InputPrefixDiv = styled.div`
@@ -21,11 +24,6 @@ const StyledInput = styled.input`
   border: none;
   color: ${yellow.medium};
   width: 100%;
-
-  // Not working
-  ::placeholder: {
-    color: white;
-  }
 `
 
 const StyledForm = styled.form`

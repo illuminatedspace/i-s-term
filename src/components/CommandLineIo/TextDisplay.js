@@ -14,9 +14,10 @@ const NoMarginBottomParagraph = styled.p`
 `
 
 const TextDisplayDiv = styled.div`
+  grid-row-start: display;
+  grid-row-end: span 1;
   padding: 1em;
   overflow-y: scroll;
-  height: 10em;
   ::-webkit-scrollbar {
     background-color: ${props => props.theme.window.bar};
   }
