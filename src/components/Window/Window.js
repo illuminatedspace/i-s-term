@@ -10,6 +10,8 @@ const StyledDiv = styled.div`
   font-family: ${props => props.theme.fontFamily};
   background-color: ${props => props.theme.window.background};
   color: ${props => props.theme.window.text};
+  height: calc(100% - 35px);
+  width: 100%;
 `
 
 const Window = ({ children, windowName }) => {
