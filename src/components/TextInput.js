@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { purple, yellow, black, background } from '../styles/color'
+import { yellow } from '../styles/color'
 
 const FlexWrapperDiv = styled.div`
   display: flex;
