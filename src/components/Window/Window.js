@@ -20,8 +20,6 @@ const Window = ({ children, windowName }) => {
       default={{
         x: 20,
         y: 20,
-        width: 320,
-        height: 200,
       }}
       bounds="window"
       dragHandleClassName={dragHandleClassName(windowName)}
