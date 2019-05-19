@@ -9,6 +9,7 @@ const StyledDiv = styled.div`
   font-weight: bold;
   letter-spacing: 0.12em;
   color: ${props => props.theme.window.barText};
+  height: ${props => props.theme.window.barHeight};
 `
 
 const WindowBar = ({ windowName }) => {

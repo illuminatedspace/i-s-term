@@ -14,6 +14,7 @@ const mainTheme = {
   window: {
     bar: colors.purple.dark,
     barText: colors.orange.medium,
+    barHeight: '35px',
     background: colors.purple.darkTransparent,
     border: borders.windowBorder,
     text: colors.orange.medium,
