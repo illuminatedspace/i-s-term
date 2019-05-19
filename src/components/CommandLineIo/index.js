@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import TextInput from '../TextInput'
 import getResponse from './getResponse'
@@ -7,10 +6,6 @@ import TextDisplay from './TextDisplay'
 import Window from '../Window/Window'
 
 const commandPrefix = '>'
-
-const StyledDiv = styled.div`
-  font-family: ${props => props.theme.fontFamily};
-`
 
 const windowName = 'terminal'
 
@@ -34,10 +29,8 @@ class CommandLineIo extends React.Component {
   render() {
     return (
       <Window windowName={windowName}>
-        <StyledDiv>
-          <TextDisplay lines={this.state.lines} />
-          <TextInput parseCommand={this.parseCommand} />
-        </StyledDiv>
+        <TextDisplay lines={this.state.lines} />
+        <TextInput parseCommand={this.parseCommand} />
       </Window>
     )
   }
