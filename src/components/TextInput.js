@@ -8,6 +8,7 @@ const FlexWrapperDiv = styled.div`
   grid-row-start: input;
   grid-row-end: span 1;
   align-self: center;
+  height: 100%;
 `
 
 const InputPrefixDiv = styled.div`
