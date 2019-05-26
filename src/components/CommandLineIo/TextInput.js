@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { yellow } from '../styles/color'
 
 const FlexWrapperDiv = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ const InputPrefixDiv = styled.div`
   flex-grow: 0.02;
   padding: 0.25em 0 0 1em;
   box-sizing: border-box;
-  color: ${props => props.theme.text.secondary};
+  color: ${props => props.theme.text.quadentiary};
 `
 
 const TextInputWrapperDiv = styled.div`

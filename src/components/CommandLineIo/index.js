@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import TextInput from '../TextInput'
+import TextInput from './TextInput'
 import getResponse from './getResponse'
 import TextDisplay from './TextDisplay'
 import Window from '../Window/Window'
+import { textNodeType } from './const'
 
 const commandPrefix = '>'
 
@@ -21,7 +22,7 @@ const GridWrapperDiv = styled.div`
 
 class CommandLineIo extends React.Component {
   state = {
-    lines: [['hello world']],
+    lines: [{ type: textNodeType.response, stringArray: ['hello world'] }],
   }
 
   prefixCommand = command => `${commandPrefix} ${command}`
@@ -32,7 +33,11 @@ class CommandLineIo extends React.Component {
     // add line for both command and response
     const prefixedCommand = this.prefixCommand(command)
     this.setState({
-      lines: [...this.state.lines, [prefixedCommand], ...response],
+      lines: [
+        ...this.state.lines,
+        { type: textNodeType.command, stringArray: [prefixedCommand] },
+        { type: textNodeType.response, stringArray: response },
+      ],
     })
   }
 
