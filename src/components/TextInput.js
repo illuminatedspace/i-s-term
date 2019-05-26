@@ -13,9 +13,11 @@ const FlexWrapperDiv = styled.div`
 
 const InputPrefixDiv = styled.div`
   flex-grow: 0.02;
-  padding: 0 0 0 1em;
+  padding: 0.25em 0 0 1em;
   box-sizing: border-box;
+  color: ${props => props.theme.text.secondary};
 `
+
 const TextInputWrapperDiv = styled.div`
   flex-grow: 1;
 `
@@ -23,12 +25,14 @@ const TextInputWrapperDiv = styled.div`
 const StyledInput = styled.input`
   background: rgba(0, 0, 0, 0);
   border: none;
-  color: ${yellow.medium};
+  color: ${props => props.theme.text.primary}
   width: 100%;
+  height: 100%;
 `
 
 const StyledForm = styled.form`
   margin-bottom: 0;
+  height: 100%;
 `
 
 const defaultState = ''
