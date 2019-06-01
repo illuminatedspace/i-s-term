@@ -19,13 +19,33 @@ const IconTitleDiv = styled.div`
   font-weight: bold;
 `
 
-const Icon = ({ iconImage, iconTitle }) => {
-  return (
-    <IconDiv>
-      <IconImg src={iconImage} />
-      <IconTitleDiv>{iconTitle}</IconTitleDiv>
-    </IconDiv>
-  )
+class Icon extends React.Component {
+  state = {
+    iconImage: this.props.iconImage,
+  }
+
+  getOnMouseOver = hoverImage => () => {
+    this.setState({ iconImage: hoverImage })
+  }
+
+  getOnMouseOut = inActiveImage => () => {
+    this.setState({ iconImage: inActiveImage })
+  }
+
+  render() {
+    const { iconImage, iconImageHover, iconTitle } = this.props
+
+    return (
+      <IconDiv>
+        <IconImg
+          src={this.state.iconImage}
+          onMouseOver={this.getOnMouseOver(iconImageHover)}
+          onMouseOut={this.getOnMouseOver(iconImage)}
+        />
+        <IconTitleDiv>{iconTitle}</IconTitleDiv>
+      </IconDiv>
+    )
+  }
 }
 
 // TODO:
