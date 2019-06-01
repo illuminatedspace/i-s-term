@@ -20,6 +20,10 @@ const mainTheme = {
     text: colors.orange.medium,
   },
 
+  icon: {
+    fontSize: '1em',
+  },
+
   // deprecate
   accent: {
     primary: colors.purple.light,
