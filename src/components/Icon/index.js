@@ -29,9 +29,9 @@ const Icon = ({ iconImage, iconTitle }) => {
 }
 
 // TODO:
-// - double click behavior
-// - drag and drop behavior?
 // - title underneath
 // - hover state
+// - drag and drop behavior?
+// - double click behavior
 
 export default Icon
