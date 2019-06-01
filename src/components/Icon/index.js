@@ -50,7 +50,7 @@ class Icon extends React.Component {
 
 // TODO:
 // - [x] title underneath
-// - [] hover state
+// - [x] hover state
 // - [] double click behavior
 // - [] drag and drop behavior?
 
