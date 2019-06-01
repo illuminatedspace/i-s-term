@@ -13,7 +13,7 @@ const StyledDiv = styled.div`
 const Main = () => {
   return (
     <StyledDiv>
-      <Icon iconImage={crystalBallInactive} />
+      <Icon iconImage={crystalBallInactive} iconTitle="About" />
       <CommandLineIo />
       <Window windowName="test">Hello</Window>
     </StyledDiv>
