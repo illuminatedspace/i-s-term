@@ -19,7 +19,7 @@ const IconTitleDiv = styled.div`
   font-weight: bold;
 `
 
-const Icon = ({ iconImage }) => {
+const Icon = ({ iconImage, iconTitle }) => {
   return (
     <IconDiv>
       <img src={iconImage} />
