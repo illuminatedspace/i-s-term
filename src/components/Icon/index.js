@@ -22,7 +22,8 @@ const IconTitleDiv = styled.div`
 const Icon = ({ iconImage, iconTitle }) => {
   return (
     <IconDiv>
-      <img src={iconImage} />
+      <IconImg src={iconImage} />
+      <IconTitleDiv>{iconTitle}</IconTitleDiv>
     </IconDiv>
   )
 }
