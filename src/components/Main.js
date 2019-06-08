@@ -20,7 +20,6 @@ const Main = () => {
         iconTitle="About"
       />
       <CommandLineIo />
-      <Window windowName="test">Hello</Window>
     </StyledDiv>
   )
 }
