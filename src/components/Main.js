@@ -11,6 +11,12 @@ const StyledDiv = styled.div`
 `
 
 class Main extends React.Component {
+  state = { windows: [] }
+
+  componentDidMount() {
+    this.setState({ windows: [...this.state.windows, CommandLineIo] })
+  }
+
   render() {
     return (
       <StyledDiv>
@@ -19,7 +25,9 @@ class Main extends React.Component {
           iconImageHover={crystalBallActive}
           iconTitle="About"
         />
-        <CommandLineIo />
+        {this.state.windows.map(Window => (
+          <Window key={Window.name} />
+        ))}
       </StyledDiv>
     )
   }
