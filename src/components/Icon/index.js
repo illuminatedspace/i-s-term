@@ -52,6 +52,8 @@ class Icon extends React.Component {
 // - [x] title underneath
 // - [x] hover state
 // - [] double click behavior
+//   - [] listen for double click
+//   - []
 // - [] drag and drop behavior?
 
 export default Icon
