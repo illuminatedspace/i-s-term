@@ -10,17 +10,19 @@ const StyledDiv = styled.div`
   font-family: ${props => props.theme.fontFamily};
 `
 
-const Main = () => {
-  return (
-    <StyledDiv>
-      <Icon
-        iconImage={crystalBallInactive}
-        iconImageHover={crystalBallActive}
-        iconTitle="About"
-      />
-      <CommandLineIo />
-    </StyledDiv>
-  )
+class Main extends React.Component {
+  render() {
+    return (
+      <StyledDiv>
+        <Icon
+          iconImage={crystalBallInactive}
+          iconImageHover={crystalBallActive}
+          iconTitle="About"
+        />
+        <CommandLineIo />
+      </StyledDiv>
+    )
+  }
 }
 
 export default Main
