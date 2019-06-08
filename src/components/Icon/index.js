@@ -52,8 +52,11 @@ class Icon extends React.Component {
 // - [x] title underneath
 // - [x] hover state
 // - [] double click behavior
+//   - [] convert Main to class
+//   - [] create launchWindow fn in Main
+//   - [] pass launchWindow down to the icon
 //   - [] listen for double click
-//   - [] add window to dom
+//   - [] on double click invoke launchWindow
 // - [] drag and drop behavior?
 
 export default Icon
