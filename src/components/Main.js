@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import CommandLineIo from './CommandLineIo'
-import Window from './Window/Window'
 import crystalBallInactive from '../images/crystal-ball-inactive.png'
 import crystalBallActive from '../images/crystal-ball-active.png'
 import Icon from './Icon'
