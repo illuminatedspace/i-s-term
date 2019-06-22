@@ -33,10 +33,10 @@ class Icon extends React.Component {
   }
 
   render() {
-    const { iconImage, iconImageHover, iconTitle } = this.props
+    const { iconImage, iconImageHover, iconTitle, onDoubleClick } = this.props
 
     return (
-      <IconDiv>
+      <IconDiv onDoubleClick={onDoubleClick}>
         <IconImg
           src={this.state.iconImage}
           onMouseOver={this.getOnMouseOver(iconImageHover)}
