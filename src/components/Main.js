@@ -34,6 +34,13 @@ const Main = () => {
       .pop()
 
     console.log('VUPLIX', relativePath)
+
+    // Chop off the word components from the realtivePath.
+    const componentModule = await import('.' + relativePath.slice(10))
+
+    const component = componentModule.default
+
+    setWindows([...windows, component])
   }
 
   const [windows, setWindows] = useState([CommandLineIo])
