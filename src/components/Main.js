@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import CommandLineIo from './CommandLineIo'
 import crystalBallInactive from '../images/crystal-ball-inactive.png'
@@ -11,60 +11,47 @@ const StyledDiv = styled.div`
   font-family: ${props => props.theme.fontFamily};
 `
 
-// make static query
-// log component names
-const withStaticQuery = WrappedComponent => props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allFile(
-          filter: { relativePath: { glob: "components/windows/components/*" } }
-        ) {
-          nodes {
-            name
-            relativePath
-            sourceInstanceName
-          }
+const Main = () => {
+  const queryData = useStaticQuery(graphql`
+    query {
+      allFile(
+        filter: { relativePath: { glob: "components/windows/components/*" } }
+      ) {
+        nodes {
+          name
+          relativePath
+          sourceInstanceName
         }
       }
-    `}
-    render={queryData => {
-      const {
-        allFile: { nodes: windows },
-      } = queryData
-      return (
-        <WrappedComponent displayName="hello" windows={windows} {...props} />
-      )
-    }}
-  />
-)
+    }
+  `)
 
-class Main extends React.Component {
-  state = { windows: [] }
+  console.log('QBONE', queryData)
 
-  componentDidMount() {
-    this.setState({ windows: [...this.state.windows, CommandLineIo] })
+  const openWindow = async key => {
+    const { relativePath, sourceInstanceName } = queryData.allFile.nodes
+      .filter(node => node.name === key)
+      .pop()
+
+    console.log('VUPLIX', relativePath)
   }
 
-  launchWindow() {
-    // TODO: Write this!
-  }
+  const [windows, setWindows] = useState([CommandLineIo])
+  console.log('PIKACHU', windows)
 
-  render() {
-    console.log('MACHOP', this.props.windows)
-    return (
-      <StyledDiv>
-        <Icon
-          iconImage={crystalBallInactive}
-          iconImageHover={crystalBallActive}
-          iconTitle="About"
-        />
-        {this.state.windows.map(Window => (
-          <Window key={Window.name} />
-        ))}
-      </StyledDiv>
-    )
-  }
+  return (
+    <StyledDiv>
+      <Icon
+        iconImage={crystalBallInactive}
+        iconImageHover={crystalBallActive}
+        iconTitle="About"
+        onDoubleClick={() => openWindow('About')}
+      />
+      {windows.map(Window => (
+        <Window key={Window.name} />
+      ))}
+    </StyledDiv>
+  )
 }
 
-export default withStaticQuery(Main)
+export default Main
