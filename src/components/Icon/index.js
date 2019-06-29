@@ -18,6 +18,13 @@ const IconTitleDiv = styled.div`
   padding: .1em .5em 
   font-weight: bold;
 `
+/*
+TODO:
+- [x] convert to hooks
+- [] Make the import work
+- [] add graphql satic query
+- [] profit 🎉
+*/
 
 const Icon = ({ onDoubleClick, iconImage, iconImageHover, windowName }) => {
   const [currentIconImage, setIconImage] = useState([iconImage])
