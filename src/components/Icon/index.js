@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { windowToIconMap, iconStates } from '../windows/_consts'
 
 const IconDiv = styled.div`
   display: grid;
