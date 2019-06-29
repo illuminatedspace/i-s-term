@@ -28,3 +28,17 @@ _All the technologies you, a citizen of the internet age, crave_
 
 - Gatsby.js
 - React.js
+
+## Todo
+
+- [] Only have one instance of a window
+- [] Active Window on top
+- [] Close windows
+- [] Content for pages
+- [] Other Icons
+- [] Contact Page
+- [] Host static site
+- [] Connect Domain
+- [] Launch Site 🎉
+- [] Projects
+- [] Resume (2.0)
