@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const IconDiv = styled.div`
@@ -19,6 +19,26 @@ const IconTitleDiv = styled.div`
   font-weight: bold;
 `
 
+const Icon = ({ onDoubleClick, iconImage, iconImageHover, windowName }) => {
+  const [currentIconImage, setIconImage] = useState([iconImage])
+
+  const getOnMouseOver = hoverImage => () => setIconImage(hoverImage)
+
+  const getOnMouseOut = inActiveImage => () => setIconImage(inActiveImage)
+
+  return (
+    <IconDiv onDoubleClick={() => onDoubleClick(windowName)}>
+      <IconImg
+        src={currentIconImage}
+        onMouseOver={getOnMouseOver(iconImageHover)}
+        onMouseOut={getOnMouseOut(iconImage)}
+      />
+      <IconTitleDiv>{windowName}</IconTitleDiv>
+    </IconDiv>
+  )
+}
+
+/*
 class Icon extends React.Component {
   state = {
     iconImage: this.props.iconImage,
@@ -32,20 +52,41 @@ class Icon extends React.Component {
     this.setState({ iconImage: inActiveImage })
   }
 
+  getIconFileName = (iconName, iconState) => `${iconName}-${iconState}.png`
+
+  // crystal-ball-active
+  getIcons = async windowName => {
+    // const iconName = windowToIconMap[windowName]
+    // const [active, inactive] = await Promise.all([
+    //   import(this.getIconFileName(iconName, iconStates.active)),
+    //   import(this.getIconFileName(iconName, iconStates.inactive)),
+    // ])
+    // return {
+    //   active: ,
+    //   inactive: ,
+    // }
+  }
+
+  getIcon = async path => import('../../images/crystal-ball-active.png')
+
   render() {
-    const { iconImage, iconImageHover, iconTitle, onDoubleClick } = this.props
+    const { iconImage, iconImageHover, windowName, onDoubleClick } = this.props
+
+    const hoverImage = this.getIcon()
+    console.log('HITMONCHAN', hoverImage)
 
     return (
-      <IconDiv onDoubleClick={() => onDoubleClick(iconTitle)}>
+      <IconDiv onDoubleClick={() => onDoubleClick(windowName)}>
         <IconImg
           src={this.state.iconImage}
           onMouseOver={this.getOnMouseOver(iconImageHover)}
-          onMouseOut={this.getOnMouseOver(iconImage)}
+          onMouseOut={this.getOnMouseOut(iconImage)}
         />
-        <IconTitleDiv>{iconTitle}</IconTitleDiv>
+        <IconTitleDiv>{windowName}</IconTitleDiv>
       </IconDiv>
     )
   }
 }
+*/
 
 export default Icon

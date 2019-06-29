@@ -47,7 +47,7 @@ const Main = () => {
       <Icon
         iconImage={crystalBallInactive}
         iconImageHover={crystalBallActive}
-        iconTitle={windowNames.about}
+        windowName={windowNames.about}
         onDoubleClick={windowName => {
           openWindow(windowName)
         }}
