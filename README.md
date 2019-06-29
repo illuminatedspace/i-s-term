@@ -31,12 +31,13 @@ _All the technologies you, a citizen of the internet age, crave_
 
 ## Todo
 
+- [] Other Icons
 - [] Only have one instance of a window
+- [] Change starting position of new windows
 - [] Active Window on top
 - [] Close windows
-- [] Content for pages
-- [] Other Icons
 - [] Contact Page
+- [] About Page
 - [] Host static site
 - [] Connect Domain
 - [] Launch Site 🎉
