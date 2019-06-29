@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -26,16 +26,12 @@ const Main = () => {
     }
   `)
 
-  console.log('QBONE', queryData)
-
   const openWindow = async key => {
-    const { relativePath, sourceInstanceName } = queryData.allFile.nodes
+    const { relativePath } = queryData.allFile.nodes
       .filter(node => node.name === key)
       .pop()
 
-    console.log('VUPLIX', relativePath)
-
-    // Chop off the word components from the realtivePath.
+    // Chop off the word 'components' from the realtivePath.
     const componentModule = await import('.' + relativePath.slice(10))
 
     const component = componentModule.default
@@ -44,7 +40,6 @@ const Main = () => {
   }
 
   const [windows, setWindows] = useState([CommandLineIo])
-  console.log('PIKACHU', windows)
 
   return (
     <StyledDiv>
