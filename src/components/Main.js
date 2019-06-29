@@ -6,6 +6,7 @@ import CommandLineIo from './CommandLineIo'
 import crystalBallInactive from '../images/crystal-ball-inactive.png'
 import crystalBallActive from '../images/crystal-ball-active.png'
 import Icon from './Icon'
+import { windowNames } from './windows/_consts'
 
 const StyledDiv = styled.div`
   font-family: ${props => props.theme.fontFamily};
@@ -46,8 +47,10 @@ const Main = () => {
       <Icon
         iconImage={crystalBallInactive}
         iconImageHover={crystalBallActive}
-        iconTitle="About"
-        onDoubleClick={() => openWindow('About')}
+        iconTitle={windowNames.about}
+        onDoubleClick={windowName => {
+          openWindow(windowName)
+        }}
       />
       {windows.map(Window => (
         <Window key={Window.name} />
