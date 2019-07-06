@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import CommandLineIo from './CommandLineIo'
-import crystalBallInactive from '../images/crystal-ball-inactive.png'
-import crystalBallActive from '../images/crystal-ball-active.png'
+import aboutInactive from '../images/about-inactive.png'
+import aboutActive from '../images/about-active.png'
 import Icon from './Icon'
 import { windowNames } from './windows/_consts'
 
@@ -45,8 +45,8 @@ const Main = () => {
   return (
     <StyledDiv>
       <Icon
-        iconImage={crystalBallInactive}
-        iconImageHover={crystalBallActive}
+        iconImage={aboutInactive}
+        iconImageHover={aboutActive}
         windowName={windowNames.about}
         onDoubleClick={windowName => {
           openWindow(windowName)
