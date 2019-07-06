@@ -36,6 +36,8 @@ _All the technologies you, a citizen of the internet age, crave_
 - [] Only have one instance of a window
 - [] Change starting position of new windows
 - [] Active Window on top
+- [] Clean Up Code
+- [] Make Theme
 - [] Close windows
 - [] Contact Page
 - [] About Page
