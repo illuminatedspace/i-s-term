@@ -23,8 +23,8 @@ const IconTitleDiv = styled.div`
 TODO:
 - [x] convert to hooks
 - [xx] Make the import work
-- [] add graphql satic query
-- [] profit 🎉
+- [] ~add graphql satic query~
+- [x] profit 🎉
 */
 
 const Icon = ({ onDoubleClick, windowName }) => {
