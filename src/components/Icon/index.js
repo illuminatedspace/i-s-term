@@ -27,19 +27,31 @@ TODO:
 - [] profit 🎉
 */
 
-const Icon = ({ onDoubleClick, iconImage, iconImageHover, windowName }) => {
-  const [currentIconImage, setIconImage] = useState([iconImage])
+const Icon = ({ onDoubleClick, windowName }) => {
+  const [currentIconImage, setIconImage] = useState()
 
-  const getOnMouseOver = hoverImage => () => setIconImage(hoverImage)
+  const getIcon = async (windowName, iconState) => {
+    const { default: icon } = await import(
+      `../../images/${windowName}-${iconState}.png`
+    )
 
-  const getOnMouseOut = inActiveImage => () => setIconImage(inActiveImage)
+    if (currentIconImage !== icon) {
+      setIconImage(icon)
+    }
+  }
+
+  const lowerCaseWindowName = windowName.toLowerCase()
+
+  useEffect(() => {
+    getIcon(lowerCaseWindowName, iconStates.inactive)
+  }, [])
 
   return (
     <IconDiv onDoubleClick={() => onDoubleClick(windowName)}>
       <IconImg
         src={currentIconImage}
-        onMouseOver={getOnMouseOver(iconImageHover)}
-        onMouseOut={getOnMouseOut(iconImage)}
+        onMouseOver={() => getIcon(lowerCaseWindowName, iconStates.active)}
+        onMouseOut={() => getIcon(lowerCaseWindowName, iconStates.inactive)}
       />
       <IconTitleDiv>{windowName}</IconTitleDiv>
     </IconDiv>
