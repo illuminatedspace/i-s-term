@@ -27,17 +27,22 @@ const Main = () => {
     }
   `)
 
-  const openWindow = async key => {
-    const { relativePath } = queryData.allFile.nodes
-      .filter(node => node.name === key)
-      .pop()
+  const isWindowLaunched = windowName =>
+    windows.some(({ name }) => name === windowName)
 
-    // Chop off the word 'components' from the realtivePath.
-    const componentModule = await import('.' + relativePath.slice(10))
+  const openWindow = async windowName => {
+    if (!isWindowLaunched(windowName)) {
+      const { relativePath } = queryData.allFile.nodes
+        .filter(node => node.name === windowName)
+        .pop()
 
-    const component = componentModule.default
+      // Chop off the word 'components' from the realtivePath.
+      const componentModule = await import('.' + relativePath.slice(10))
 
-    setWindows([...windows, component])
+      const component = componentModule.default
+
+      setWindows([...windows, component])
+    }
   }
 
   const [windows, setWindows] = useState([CommandLineIo])
