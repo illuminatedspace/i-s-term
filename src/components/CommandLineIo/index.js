@@ -6,10 +6,9 @@ import getResponse from './getResponse'
 import TextDisplay from './TextDisplay'
 import Window from '../Window/Window'
 import { textNodeType } from './const'
+import { windowNames } from '../windows/_consts'
 
 const commandPrefix = '>'
-
-const windowName = 'terminal'
 
 const GridWrapperDiv = styled.div`
   display: grid;
@@ -20,7 +19,7 @@ const GridWrapperDiv = styled.div`
   height: 100%;
 `
 
-class CommandLineIo extends React.Component {
+class Terminal extends React.Component {
   state = {
     lines: [{ type: textNodeType.response, stringArray: ['hello world'] }],
   }
@@ -43,7 +42,7 @@ class CommandLineIo extends React.Component {
 
   render() {
     return (
-      <Window windowName={windowName}>
+      <Window windowName={windowNames.terminal}>
         <GridWrapperDiv>
           <TextDisplay lines={this.state.lines} />
           <TextInput parseCommand={this.parseCommand} />
@@ -53,4 +52,4 @@ class CommandLineIo extends React.Component {
   }
 }
 
-export default CommandLineIo
+export default Terminal
