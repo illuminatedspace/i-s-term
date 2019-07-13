@@ -32,13 +32,13 @@ class CommandLineIo extends React.Component {
     const response = getResponse(command)
     // add line for both command and response
     const prefixedCommand = this.prefixCommand(command)
-    this.setState({
+    this.setState(prevState => ({
       lines: [
-        ...this.state.lines,
+        ...prevState.lines,
         { type: textNodeType.command, stringArray: [prefixedCommand] },
         { type: textNodeType.response, stringArray: response },
       ],
-    })
+    }))
   }
 
   render() {
