@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import CommandLineIo from './CommandLineIo'
+import Terminal from './windows/components/Terminal'
 import aboutInactive from '../images/about-inactive.png'
 import aboutActive from '../images/about-active.png'
 import Icon from './Icon'
@@ -60,7 +60,7 @@ const Main = () => {
     console.log('KEROPI', activeWindowIndex)
   }
 
-  const [windows, setWindows] = useState([CommandLineIo, Projects])
+  const [windows, setWindows] = useState([Terminal, Projects])
 
   console.log('WOBBAFET', windows)
 

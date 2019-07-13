@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import TextInput from './TextInput'
 import getResponse from './getResponse'
 import TextDisplay from './TextDisplay'
-import Window from '../Window/Window'
+import Window from '../../../Window/Window'
 import { textNodeType } from './const'
-import { windowNames } from '../windows/_consts'
+import { windowNames } from '../../_consts'
 
 const commandPrefix = '>'
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import useStayScrolled from 'react-stay-scrolled'
 
-import Layout from '../layout'
+import Layout from '../../../layout'
 
 const getMarginBottomDiv = textType => styled.div`
   margin-bottom: 1em;
