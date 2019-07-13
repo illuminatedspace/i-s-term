@@ -31,11 +31,11 @@ _All the technologies you, a citizen of the internet age, crave_
 
 ## Todo
 
+- [x] Only have one instance of a window
+- [] Active Window on top
 - [] Other Icons
 - [] Drag and drop icons?
-- [] Only have one instance of a window
 - [] Change starting position of new windows
-- [] Active Window on top
 - [] Clean Up Code
 - [] Make Theme
 - [] Close windows
