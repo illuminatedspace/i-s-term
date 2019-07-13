@@ -8,6 +8,13 @@ import aboutActive from '../images/about-active.png'
 import Icon from './Icon'
 import { windowNames } from './windows/_consts'
 
+// ACTIVE WINDOW TOP
+// TODO:
+// - [] find z axis property `z-index`
+// - [] test where to add property
+// - [] track `active` window
+// - [] apply z axis property if active window
+
 const StyledDiv = styled.div`
   font-family: ${props => props.theme.fontFamily};
 `
