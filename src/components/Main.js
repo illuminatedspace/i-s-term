@@ -7,6 +7,7 @@ import aboutInactive from '../images/about-inactive.png'
 import aboutActive from '../images/about-active.png'
 import Icon from './Icon'
 import { windowNames } from './windows/_consts'
+import Projects from './windows/components/Projects'
 
 // ACTIVE WINDOW TOP
 // TODO:
@@ -52,7 +53,16 @@ const Main = () => {
     }
   }
 
-  const [windows, setWindows] = useState([CommandLineIo])
+  const makeWindowActive = windowName => {
+    const activeWindowIndex = windows.findIndex(
+      ({ name }) => name === windowName
+    )
+    console.log('KEROPI', activeWindowIndex)
+  }
+
+  const [windows, setWindows] = useState([CommandLineIo, Projects])
+
+  console.log('WOBBAFET', windows)
 
   return (
     <StyledDiv>
