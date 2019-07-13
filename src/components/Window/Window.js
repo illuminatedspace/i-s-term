@@ -14,7 +14,15 @@ const StyledDiv = styled.div`
   width: 100%;
 `
 
-const Window = ({ children, windowName }) => {
+const Window = ({ children, windowName }) => (
+  <>
+    <WindowBar windowName={windowName} />
+    <StyledDiv>{children}</StyledDiv>
+  </>
+)
+
+const DraggableWindow = props => {
+  console.log('POPOLITO', props)
   return (
     <Rnd
       default={{
@@ -22,12 +30,14 @@ const Window = ({ children, windowName }) => {
         y: 20,
       }}
       bounds="window"
-      dragHandleClassName={dragHandleClassName(windowName)}
+      dragHandleClassName={dragHandleClassName(props.windowName)}
+      onClick={() => {
+        props.makeWindowActive(props.windowName)
+      }}
     >
-      <WindowBar windowName={windowName} />
-      <StyledDiv>{children}</StyledDiv>
+      <Window {...props} />
     </Rnd>
   )
 }
 
-export default Window
+export default DraggableWindow

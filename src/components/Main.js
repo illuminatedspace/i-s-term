@@ -57,12 +57,20 @@ const Main = () => {
     const activeWindowIndex = windows.findIndex(
       ({ name }) => name === windowName
     )
-    console.log('KEROPI', activeWindowIndex)
+
+    // const slicedWindows = [
+    //   ...windows.slice(0, activeWindowIndex),
+    //   ...windows.slice(activeWindowIndex + 1),
+    // ]
+
+    const filteredWindows = windows.filter(({ name }) => name !== windowName)
+
+    filteredWindows.push(windows[activeWindowIndex])
+
+    setWindows(filteredWindows)
   }
 
   const [windows, setWindows] = useState([Terminal, Projects])
-
-  console.log('WOBBAFET', windows)
 
   return (
     <StyledDiv>
@@ -75,7 +83,7 @@ const Main = () => {
         }}
       />
       {windows.map(Window => (
-        <Window key={Window.name} />
+        <Window key={Window.name} makeWindowActive={makeWindowActive} />
       ))}
     </StyledDiv>
   )
