@@ -54,20 +54,12 @@ const Main = () => {
   }
 
   const makeWindowActive = windowName => {
-    const activeWindowIndex = windows.findIndex(
-      ({ name }) => name === windowName
-    )
+    const activeWindow = windows.find(window => window.name === windowName)
+    const windowsWithActiveAsLast = windows
+      .filter(window => window.name !== windowName)
+      .concat([activeWindow])
 
-    // const slicedWindows = [
-    //   ...windows.slice(0, activeWindowIndex),
-    //   ...windows.slice(activeWindowIndex + 1),
-    // ]
-
-    const filteredWindows = windows.filter(({ name }) => name !== windowName)
-
-    filteredWindows.push(windows[activeWindowIndex])
-
-    setWindows(filteredWindows)
+    setWindows(windowsWithActiveAsLast)
   }
 
   const [windows, setWindows] = useState([Terminal, Projects])
