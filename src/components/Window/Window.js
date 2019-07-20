@@ -31,7 +31,7 @@ const DraggableWindow = props => {
       }}
       bounds="window"
       dragHandleClassName={dragHandleClassName(props.windowName)}
-      onClick={() => {
+      onMouseDown={() => {
         props.makeWindowActive(props.windowName)
       }}
     >
