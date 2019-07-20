@@ -31,7 +31,7 @@ const Main = () => {
   const isWindowLaunched = windowName =>
     windows.some(({ name }) => name === windowName)
 
-  const openWindow = async windowName => {
+  const openWindow = windowName => async () => {
     if (!isWindowLaunched(windowName)) {
       const { relativePath } = queryData.allFile.nodes
         .filter(node => node.name === windowName)
@@ -59,14 +59,9 @@ const Main = () => {
 
   return (
     <StyledDiv>
-      <Icon
-        iconImage={aboutInactive}
-        iconImageHover={aboutActive}
-        windowName={windowNames.about}
-        onDoubleClick={windowName => {
-          openWindow(windowName)
-        }}
-      />
+      <Icon windowName={windowNames.about} openWindow={openWindow} />
+      <Icon windowName={windowNames.projects} openWindow={openWindow} />
+      <Icon windowName={windowNames.contact} openWindow={openWindow} />
       {windows.map(Window => (
         <Window key={Window.name} makeWindowActive={makeWindowActive} />
       ))}
