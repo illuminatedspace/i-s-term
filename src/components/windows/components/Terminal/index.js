@@ -42,7 +42,10 @@ class Terminal extends React.Component {
 
   render() {
     return (
-      <Window windowName={windowNames.terminal}>
+      <Window
+        makeWindowActive={this.props.makeWindowActive}
+        windowName={windowNames.terminal}
+      >
         <GridWrapperDiv>
           <TextDisplay lines={this.state.lines} />
           <TextInput parseCommand={this.parseCommand} />
