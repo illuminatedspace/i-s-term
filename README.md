@@ -33,9 +33,11 @@ _All the technologies you, a citizen of the internet age, crave_
 
 - [x] Only have one instance of a window
 - [x] Active Window on top
+- [x] Other Icons
+- [x] Change starting position of new windows
+- [] launch windows with terminal
+- [] fix terminal commands
 - [] Re-export images
-- [] Other Icons
-- [] Change starting position of new windows
 - [] Clean Up Code
 - [] Make Theme
 
