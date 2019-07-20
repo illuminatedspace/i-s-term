@@ -32,13 +32,15 @@ _All the technologies you, a citizen of the internet age, crave_
 ## Todo
 
 - [x] Only have one instance of a window
-- [] Active Window on top
+- [x] Active Window on top
 - [] Other Icons
-- [] Drag and drop icons?
 - [] Change starting position of new windows
 - [] Clean Up Code
 - [] Make Theme
-- [] Close windows
+
+- [] Close windows?
+- [] Drag and drop icons?
+- [] Refactor window creation, just pass guts of window, and then don't have to pass `makeWindowActive` in every window component
 - [] Contact Page
 - [] About Page
 - [] Host static site
