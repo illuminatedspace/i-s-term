@@ -33,6 +33,7 @@ _All the technologies you, a citizen of the internet age, crave_
 
 - [x] Only have one instance of a window
 - [x] Active Window on top
+- [] Re-export images
 - [] Other Icons
 - [] Change starting position of new windows
 - [] Clean Up Code
@@ -41,6 +42,7 @@ _All the technologies you, a citizen of the internet age, crave_
 - [] Close windows?
 - [] Drag and drop icons?
 - [] Refactor window creation, just pass guts of window, and then don't have to pass `makeWindowActive` in every window component
+- [] Look into creating SVGs of icons to apply on hover directly to component
 - [] Contact Page
 - [] About Page
 - [] Host static site
