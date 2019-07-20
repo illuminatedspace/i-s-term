@@ -55,7 +55,7 @@ const Main = () => {
     setWindows(windowsWithActiveAsLast)
   }
 
-  const [windows, setWindows] = useState([Terminal, Projects])
+  const [windows, setWindows] = useState([Terminal])
 
   return (
     <StyledDiv>
