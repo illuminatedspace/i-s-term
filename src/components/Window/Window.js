@@ -21,23 +21,20 @@ const Window = ({ children, windowName }) => (
   </>
 )
 
-const DraggableWindow = props => {
-  console.log('POPOLITO', props)
-  return (
-    <Rnd
-      default={{
-        x: 20,
-        y: 20,
-      }}
-      bounds="window"
-      dragHandleClassName={dragHandleClassName(props.windowName)}
-      onMouseDown={() => {
-        props.makeWindowActive(props.windowName)
-      }}
-    >
-      <Window {...props} />
-    </Rnd>
-  )
-}
+const DraggableWindow = props => (
+  <Rnd
+    default={{
+      x: 20,
+      y: 20,
+    }}
+    bounds="window"
+    dragHandleClassName={dragHandleClassName(props.windowName)}
+    onMouseDown={() => {
+      props.makeWindowActive(props.windowName)
+    }}
+  >
+    <Window {...props} />
+  </Rnd>
+)
 
 export default DraggableWindow
