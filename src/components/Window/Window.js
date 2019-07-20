@@ -21,12 +21,19 @@ const Window = ({ children, windowName }) => (
   </>
 )
 
-const DraggableWindow = props => (
+const defaultStartingPosition = {
+  x: 250,
+  y: 100,
+  width: 500,
+  height: 500,
+}
+
+const DraggableWindow = ({
+  startingPosition = defaultStartingPosition,
+  ...props
+}) => (
   <Rnd
-    default={{
-      x: 20,
-      y: 20,
-    }}
+    default={{ ...startingPosition }}
     bounds="window"
     dragHandleClassName={dragHandleClassName(props.windowName)}
     onMouseDown={() => {

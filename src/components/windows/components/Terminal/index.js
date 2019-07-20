@@ -43,6 +43,7 @@ class Terminal extends React.Component {
   render() {
     return (
       <Window
+        startingPosition={{ x: 175, y: 20, width: 500, height: 300 }}
         makeWindowActive={this.props.makeWindowActive}
         windowName={windowNames.terminal}
       >
