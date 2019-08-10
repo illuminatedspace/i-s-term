@@ -17,10 +17,6 @@ const getTextTypeByNodeType = textNodeType => {
   return getMarginBottomDiv(textType)
 }
 
-const MarginBottomDiv = styled.div`
-  margin-bottom: 1em;
-`
-
 const NoMarginBottomParagraph = styled.p`
   margin-bottom: 0;
 `
