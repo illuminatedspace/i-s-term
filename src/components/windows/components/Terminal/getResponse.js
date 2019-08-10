@@ -1,3 +1,6 @@
+import React from 'react'
+import { TextNode } from './TerminalText'
+
 const commands = {
   help: {
     name: 'help',
@@ -19,7 +22,7 @@ const commands = {
 const getResponse = command => {
   switch (command) {
     case commands.help.flag:
-    case commands.help.name:
+    case commands.help.name: {
       /*
         should return format for every key in commands 
         help -h
@@ -27,12 +30,15 @@ const getResponse = command => {
       */
       return Object.values(commands).reduce(
         (acc, { name, flag, description }) => {
-          const commandEntry = [`${name}, ${flag}`, description]
-          return [...acc, commandEntry]
+          return [
+            ...acc,
+            <TextNode text={`${name}, ${flag}`} />,
+            <TextNode text={description} />,
+          ]
         },
-        [['Here are all the commands available:']]
+        [<TextNode text="Here are all the commands available:" />]
       )
-
+    }
     default:
       return [
         [
