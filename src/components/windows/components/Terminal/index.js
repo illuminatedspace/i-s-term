@@ -20,29 +20,39 @@ const GridWrapperDiv = styled.div`
   height: 100%;
 `
 
-const startingLine = (
-  <TextNodeCollection>
+const startingLine = key => (
+  <TextNodeCollection key={key}>
     <TextNode text="hello world" />
   </TextNodeCollection>
 )
 
 const Terminal = ({ makeWindowActive }) => {
-  const [lines, setLines] = useState([startingLine])
+  const [lines, setLines] = useState([startingLine(0), startingLine(1)])
 
   const prefixCommand = command => `${commandPrefix} ${command}`
 
+  const buildLine = ({ command, index, type }) => (
+    <TextNodeCollection key={index} type={type}>
+      <TextNode text={command} />
+    </TextNodeCollection>
+  )
+
   const parseCommand = command => {
     // match command to response (switch)
-    const response = getResponse(command)
     // add line for both command and response
-    const prefixedCommand = prefixCommand(command)
-    setLines(prevState => ({
-      lines: [
-        ...prevState.lines,
-        { type: textNodeType.command, stringArray: [prefixedCommand] },
-        { type: textNodeType.response, stringArray: response },
-      ],
-    }))
+    const commandIndex = lines.length
+    const commandLine = buildLine({
+      command: prefixCommand(command),
+      index: commandIndex,
+      type: textNodeType.command,
+    })
+    const response = getResponse(command)
+    const responseLine = buildLine({
+      command: response,
+      index: commandIndex + 1,
+      type: textNodeType.response,
+    })
+    setLines(prevLines => [...prevLines, commandLine, responseLine])
   }
 
   return (
