@@ -36,23 +36,14 @@ const TextDisplay = ({ lines }) => {
 
   useLayoutEffect(() => {
     stayScrolled()
-  }, [lines])
+  }, [lines.length])
 
-  if (lines) {
-    return (
-      <TextDisplayDiv ref={textDisplayDivRef}>
-        <h1>Hi Twitch!</h1>
-        <TextNodeCollection>
-          <TextNode text="test" />
-        </TextNodeCollection>
-
-        <TextNodeCollection>
-          <TextNode text="test2" />
-          <TextNode text="test3" />
-        </TextNodeCollection>
-      </TextDisplayDiv>
-    )
-  }
+  return (
+    <TextDisplayDiv ref={textDisplayDivRef}>
+      <h1>Hi Twitch!</h1>
+      {lines}
+    </TextDisplayDiv>
+  )
 }
 
 Layout.propTypes = {
