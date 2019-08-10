@@ -1,23 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// REQUIREMENTS
-// list all commands in a formatted way
-// format all commands and responses with different colors
-// every "text block" needs to have new lines and margin bottom
+export const textNodeType = {
+  command: 'command',
+  response: 'response',
+}
 
-// DEPRECATED
-// const getMarginBottomDiv = textType => styled.div`
-//   margin-bottom: 1em;
-//   // color: ${props => props.theme.text[textType]};
-// `
+const getMarginBottomDiv = textType => styled.div`
+  margin-bottom: 1em;
+  color: ${props => props.theme.text[textType]};
+`
 
-// DEPRECATED
-// const getDivByTextNodeType = textNodeType => {
-//   const textType = textNodeType === 'command' ? 'quadentiary' : 'secondary'
+const getTextTypeByNodeType = textNodeType => {
+  const textType = textNodeType === 'command' ? 'quadentiary' : 'secondary'
 
-//   return getMarginBottomDiv(textType)
-// }
+  return getMarginBottomDiv(textType)
+}
 
 const MarginBottomDiv = styled.div`
   margin-bottom: 1em;
@@ -31,6 +29,8 @@ export const TextNode = ({ text }) => (
   <NoMarginBottomParagraph>{text}</NoMarginBottomParagraph>
 )
 
-export const TextNodeCollection = ({ children }) => (
-  <MarginBottomDiv>{children}</MarginBottomDiv>
-)
+export const TextNodeCollection = ({ children, type }) => {
+  const StyledDiv = getTextTypeByNodeType(type)
+
+  return <StyledDiv>{children}</StyledDiv>
+}
