@@ -4,21 +4,7 @@ import styled from 'styled-components'
 import useStayScrolled from 'react-stay-scrolled'
 
 import Layout from '../../../layout'
-
-const getMarginBottomDiv = textType => styled.div`
-  margin-bottom: 1em;
-  color: ${props => props.theme.text[textType]};
-`
-
-const getDivByTextNodeType = textNodeType => {
-  const textType = textNodeType === 'command' ? 'quadentiary' : 'secondary'
-
-  return getMarginBottomDiv(textType)
-}
-
-const NoMarginBottomParagraph = styled.p`
-  margin-bottom: 0;
-`
+import { TextNodeCollection, TextNode } from './TerminalText'
 
 const TextDisplayDiv = styled.div`
   grid-row-start: display;
@@ -44,21 +30,6 @@ const TextDisplayDiv = styled.div`
  * on a seperate line
  */
 
-/**
- * Renders blocks of texts from an array of string arrays
- * @param {TerminalTextNode[]} linesArray
- */
-const breakTextOnNewLines = linesArray =>
-  linesArray.map(({ type, stringArray }, index) => {
-    const textBlockArray = stringArray.map((string, index) => (
-      <NoMarginBottomParagraph key={index}>{string}</NoMarginBottomParagraph>
-    ))
-
-    const MarginBottomDiv = getDivByTextNodeType(type)
-
-    return <MarginBottomDiv key={index}>{textBlockArray}</MarginBottomDiv>
-  })
-
 const TextDisplay = ({ lines }) => {
   const textDisplayDivRef = useRef(null)
   const { stayScrolled } = useStayScrolled(textDisplayDivRef)
@@ -71,7 +42,14 @@ const TextDisplay = ({ lines }) => {
     return (
       <TextDisplayDiv ref={textDisplayDivRef}>
         <h1>Hi Twitch!</h1>
-        {breakTextOnNewLines(lines)}
+        <TextNodeCollection>
+          <TextNode text="test" />
+        </TextNodeCollection>
+
+        <TextNodeCollection>
+          <TextNode text="test2" />
+          <TextNode text="test3" />
+        </TextNodeCollection>
       </TextDisplayDiv>
     )
   }
