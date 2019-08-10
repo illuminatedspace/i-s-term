@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import TextInput from './TextInput'
@@ -7,6 +7,7 @@ import TextDisplay from './TextDisplay'
 import Window from '../../../Window/Window'
 import { textNodeType } from './const'
 import { windowNames } from '../../_consts'
+import { TextNodeCollection, TextNode } from './TerminalText'
 
 const commandPrefix = '>'
 
@@ -19,19 +20,23 @@ const GridWrapperDiv = styled.div`
   height: 100%;
 `
 
-class Terminal extends React.Component {
-  state = {
-    lines: [{ type: textNodeType.response, stringArray: ['hello world'] }],
-  }
+const startingLine = (
+  <TextNodeCollection>
+    <TextNode text="hello world" />
+  </TextNodeCollection>
+)
 
-  prefixCommand = command => `${commandPrefix} ${command}`
+const Terminal = ({ makeWindowActive }) => {
+  const [lines, setLines] = useState([startingLine])
 
-  parseCommand = command => {
+  const prefixCommand = command => `${commandPrefix} ${command}`
+
+  const parseCommand = command => {
     // match command to response (switch)
     const response = getResponse(command)
     // add line for both command and response
-    const prefixedCommand = this.prefixCommand(command)
-    this.setState(prevState => ({
+    const prefixedCommand = prefixCommand(command)
+    setLines(prevState => ({
       lines: [
         ...prevState.lines,
         { type: textNodeType.command, stringArray: [prefixedCommand] },
@@ -40,20 +45,18 @@ class Terminal extends React.Component {
     }))
   }
 
-  render() {
-    return (
-      <Window
-        startingPosition={{ x: 175, y: 20, width: 500, height: 300 }}
-        makeWindowActive={this.props.makeWindowActive}
-        windowName={windowNames.terminal}
-      >
-        <GridWrapperDiv>
-          <TextDisplay lines={this.state.lines} />
-          <TextInput parseCommand={this.parseCommand} />
-        </GridWrapperDiv>
-      </Window>
-    )
-  }
+  return (
+    <Window
+      startingPosition={{ x: 175, y: 20, width: 500, height: 300 }}
+      makeWindowActive={makeWindowActive}
+      windowName={windowNames.terminal}
+    >
+      <GridWrapperDiv>
+        <TextDisplay lines={lines} />
+        <TextInput parseCommand={parseCommand} />
+      </GridWrapperDiv>
+    </Window>
+  )
 }
 
 export default Terminal
