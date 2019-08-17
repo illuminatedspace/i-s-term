@@ -33,7 +33,7 @@ const Terminal = ({ makeWindowActive }) => {
 
   const buildLine = ({ command, index, type }) => (
     <TextNodeCollection key={index} type={type}>
-      <TextNode text={command} />
+      {command}
     </TextNodeCollection>
   )
 
