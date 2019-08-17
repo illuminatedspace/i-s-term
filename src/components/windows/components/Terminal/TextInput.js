@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const FlexWrapperDiv = styled.div`
@@ -36,39 +36,35 @@ const StyledForm = styled.form`
 
 const defaultState = ''
 
-class TextInput extends React.Component {
-  state = {
-    textInput: defaultState,
+const TextInput = ({ parseCommand }) => {
+  const [textInput, setTextInput] = useState(defaultState)
+
+  const handleChange = event => {
+    setTextInput(event.target.value)
   }
 
-  handleChange = event => {
-    this.setState({ textInput: event.target.value })
-  }
-
-  handleSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault()
-    this.props.parseCommand(this.state.textInput)
-    this.setState({ textInput: defaultState })
+    parseCommand(textInput)
+    setTextInput(defaultState)
   }
 
-  render() {
-    return (
-      <FlexWrapperDiv>
-        <InputPrefixDiv>{'>'}</InputPrefixDiv>
-        <TextInputWrapperDiv>
-          <StyledForm onSubmit={this.handleSubmit}>
-            <StyledInput
-              type="text"
-              id="command-line"
-              placeholder="what would you like to do?"
-              onChange={this.handleChange}
-              value={this.state.textInput}
-            />
-          </StyledForm>
-        </TextInputWrapperDiv>
-      </FlexWrapperDiv>
-    )
-  }
+  return (
+    <FlexWrapperDiv>
+      <InputPrefixDiv>{'>'}</InputPrefixDiv>
+      <TextInputWrapperDiv>
+        <StyledForm onSubmit={handleSubmit}>
+          <StyledInput
+            type="text"
+            id="command-line"
+            placeholder="what would you like to do?"
+            onChange={handleChange}
+            value={textInput}
+          />
+        </StyledForm>
+      </TextInputWrapperDiv>
+    </FlexWrapperDiv>
+  )
 }
 
 export default TextInput
