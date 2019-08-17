@@ -3,11 +3,8 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Terminal from './windows/components/Terminal'
-import aboutInactive from '../images/about-inactive.png'
-import aboutActive from '../images/about-active.png'
 import Icon from './Icon'
 import { windowNames } from './windows/_consts'
-import Projects from './windows/components/Projects'
 
 const StyledDiv = styled.div`
   font-family: ${props => props.theme.fontFamily};
