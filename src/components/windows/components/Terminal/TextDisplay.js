@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import useStayScrolled from 'react-stay-scrolled'
 
 import Layout from '../../../layout'
-import { TextNodeCollection, TextNode } from './TerminalText'
 
 const TextDisplayDiv = styled.div`
   grid-row-start: display;
