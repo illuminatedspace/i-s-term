@@ -32,19 +32,28 @@ const getResponse = command => {
         (acc, { name, flag, description }) => {
           return [
             ...acc,
-            <TextNode text={`${name}, ${flag}`} />,
-            <TextNode text={description} />,
+            <TextNode text={`${name}, ${flag}`} key={`${name}-command`} />,
+            <TextNode text={description} key={`${name}-description`} />,
           ]
         },
-        [<TextNode text="Here are all the commands available:" />]
+        [
+          <TextNode
+            text="Here are all the commands available:"
+            key={'command-available'}
+          />,
+        ]
       )
     }
     default:
       return [
-        [
-          'Sorry, I did not understand that command.',
-          'Type "help" to see a list of accepted commands.',
-        ],
+        <TextNode
+          text="Sorry, I did not understand that command."
+          key="sorry"
+        />,
+        <TextNode
+          text={`Type "help" to see a list of accepted commands.`}
+          key="type-help"
+        />,
       ]
   }
 }
