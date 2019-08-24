@@ -27,7 +27,7 @@ const startingLine = key => (
 )
 
 const Terminal = ({ makeWindowActive, openWindow }) => {
-  const [lines, setLines] = useState([startingLine(0), startingLine(1)])
+  const [lines, setLines] = useState([startingLine(0)])
 
   const prefixCommand = command => `${commandPrefix} ${command}`
 
@@ -38,8 +38,6 @@ const Terminal = ({ makeWindowActive, openWindow }) => {
   )
 
   const parseCommand = command => {
-    // match command to response (switch)
-    // add line for both command and response
     const commandIndex = lines.length
     const commandLine = buildLine({
       command: prefixCommand(command),
