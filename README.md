@@ -36,7 +36,7 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] Other Icons
 - [x] Change starting position of new windows
 - [] launch windows with terminal
-- [] fix terminal commands
+- [x] fix terminal commands
 - [] Re-export images
 - [] Clean Up Code
 - [] Make Theme
