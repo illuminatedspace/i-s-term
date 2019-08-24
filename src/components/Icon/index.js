@@ -33,18 +33,16 @@ const Icon = ({ openWindow, windowName }) => {
     }
   }
 
-  const lowerCaseWindowName = windowName.toLowerCase()
-
   useEffect(() => {
-    getIcon(lowerCaseWindowName, iconStates.inactive)
+    getIcon(windowName, iconStates.inactive)
   }, [])
 
   return (
     <IconDiv onDoubleClick={openWindow(windowName)}>
       <IconImg
         src={currentIconImage}
-        onMouseOver={() => getIcon(lowerCaseWindowName, iconStates.active)}
-        onMouseOut={() => getIcon(lowerCaseWindowName, iconStates.inactive)}
+        onMouseOver={() => getIcon(windowName, iconStates.active)}
+        onMouseOut={() => getIcon(windowName, iconStates.inactive)}
       />
       <IconTitleDiv>{windowName}</IconTitleDiv>
     </IconDiv>

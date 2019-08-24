@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import { TextNode } from './TerminalText'
 import { windowNames } from '../../_consts'
 
@@ -44,8 +45,7 @@ const createHelpResponse = () =>
     ]
   )
 
-const createLaunchResponse = ([unsanitizedWindowName]) => {
-  const windowName = unsanitizedWindowName.toLowerCase()
+const createLaunchResponse = ([windowName]) => {
   console.log('MACHOP', windowName)
 
   const { terminal: terminalWindowName, ...launchableWindowNames } = windowNames

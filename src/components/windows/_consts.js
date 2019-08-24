@@ -1,9 +1,9 @@
-const about = 'About'
-const projects = 'Projects'
-const terminal = 'Terminal'
-const contact = 'Contact'
+const About = 'About'
+const Projects = 'Projects'
+const Terminal = 'Terminal'
+const Contact = 'Contact'
 
-export const windowNames = { about, projects, terminal, contact }
+export const windowNames = { About, Projects, Terminal, Contact }
 
 export const iconStates = {
   active: 'active',

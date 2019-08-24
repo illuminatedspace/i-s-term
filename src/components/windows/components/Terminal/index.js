@@ -57,7 +57,7 @@ const Terminal = ({ makeWindowActive, openWindow }) => {
     <Window
       startingPosition={{ x: 175, y: 20, width: 500, height: 300 }}
       makeWindowActive={makeWindowActive}
-      windowName={windowNames.terminal}
+      windowName={windowNames.Terminal}
     >
       <GridWrapperDiv>
         <TextDisplay lines={lines} />

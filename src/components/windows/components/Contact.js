@@ -3,7 +3,7 @@ import Window from '../../Window/Window'
 import { windowNames } from '../_consts'
 
 const Contact = ({ makeWindowActive }) => (
-  <Window makeWindowActive={makeWindowActive} windowName={windowNames.contact}>
+  <Window makeWindowActive={makeWindowActive} windowName={windowNames.Contact}>
     {'Contact me: liz@liz.liz'}
   </Window>
 )

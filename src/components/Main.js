@@ -56,12 +56,13 @@ const Main = () => {
 
   return (
     <StyledDiv>
-      <Icon windowName={windowNames.about} openWindow={openWindow} />
-      <Icon windowName={windowNames.projects} openWindow={openWindow} />
-      <Icon windowName={windowNames.contact} openWindow={openWindow} />
-      {windows.map(Window => (
-        <Window key={Window.name} makeWindowActive={makeWindowActive} />
-      ))}
+      <Icon windowName={windowNames.About} openWindow={openWindow} />
+      <Icon windowName={windowNames.Projects} openWindow={openWindow} />
+      <Icon windowName={windowNames.Contact} openWindow={openWindow} />
+      {windows.map(Window => {
+        console.log('SLOPOKE', Window.name)
+        return <Window key={Window.name} makeWindowActive={makeWindowActive} />
+      })}
     </StyledDiv>
   )
 }
