@@ -56,11 +56,24 @@ const Main = () => {
 
   return (
     <StyledDiv>
-      <Icon windowName={windowNames.About} openWindow={openWindow} />
-      <Icon windowName={windowNames.Projects} openWindow={openWindow} />
-      <Icon windowName={windowNames.Contact} openWindow={openWindow} />
+      <Icon
+        windowName={windowNames.About}
+        createLaunchWindow={createLaunchWindow}
+      />
+      <Icon
+        windowName={windowNames.Projects}
+        createLaunchWindow={createLaunchWindow}
+      />
+      <Icon
+        windowName={windowNames.Contact}
+        createLaunchWindow={createLaunchWindow}
+      />
       {windows.map(Window => (
-        <Window key={Window.name} makeWindowActive={makeWindowActive} />
+        <Window
+          key={Window.name}
+          makeWindowActive={makeWindowActive}
+          createLaunchWindow={createLaunchWindow}
+        />
       ))}
     </StyledDiv>
   )

@@ -20,7 +20,7 @@ const IconTitleDiv = styled.div`
   font-weight: bold;
 `
 
-const Icon = ({ openWindow, windowName }) => {
+const Icon = ({ createLaunchWindow, windowName }) => {
   const [currentIconImage, setIconImage] = useState()
 
   const getIcon = async (windowName, iconState) => {
@@ -38,7 +38,7 @@ const Icon = ({ openWindow, windowName }) => {
   }, [])
 
   return (
-    <IconDiv onDoubleClick={openWindow(windowName)}>
+    <IconDiv onDoubleClick={createLaunchWindow(windowName)}>
       <IconImg
         src={currentIconImage}
         onMouseOver={() => getIcon(windowName, iconStates.active)}

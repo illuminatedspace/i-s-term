@@ -26,7 +26,7 @@ const startingLine = key => (
   </TextNodeCollection>
 )
 
-const Terminal = ({ makeWindowActive, openWindow }) => {
+const Terminal = ({ makeWindowActive, createLaunchWindow }) => {
   const [lines, setLines] = useState([startingLine(0)])
 
   const prefixCommand = command => `${commandPrefix} ${command}`
