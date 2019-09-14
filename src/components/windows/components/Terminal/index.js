@@ -44,7 +44,7 @@ const Terminal = ({ makeWindowActive, createLaunchWindow }) => {
       index: commandIndex,
       type: textNodeType.command,
     })
-    const response = getResponse(command)
+    const response = getResponse(command, createLaunchWindow)
     const responseLine = buildLine({
       command: response,
       index: commandIndex + 1,

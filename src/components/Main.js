@@ -28,7 +28,7 @@ const Main = () => {
   const isWindowLaunched = windowName =>
     windows.some(({ name }) => name === windowName)
 
-  const openWindow = windowName => async () => {
+  const createLaunchWindow = windowName => async () => {
     if (!isWindowLaunched(windowName)) {
       const { relativePath } = queryData.allFile.nodes
         .filter(node => node.name === windowName)

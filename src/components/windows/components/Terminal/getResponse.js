@@ -45,8 +45,8 @@ const createHelpResponse = () =>
     ]
   )
 
-const createLaunchResponse = ([windowName]) => {
-  console.log('MACHOP', windowName)
+const createLaunchResponse = ([unsanitizedWindowName], createLaunchWindow) => {
+  const windowName = _.startCase(unsanitizedWindowName)
 
   const { terminal: terminalWindowName, ...launchableWindowNames } = windowNames
 
@@ -75,6 +75,10 @@ const createLaunchResponse = ([windowName]) => {
       />,
     ]
   }
+
+  createLaunchWindow(windowName)()
+
+  return [<TextNode key="launched-window" text={`launch ${windowName}`} />]
 }
 
 const createDefaultResponse = () => [
@@ -93,7 +97,7 @@ const createDefaultResponse = () => [
 // TODO: handle displaying arguments for help command with "launch"
 // launch contact
 // ['launch', 'contact']
-const getResponse = (inputtedText, openWindow) => {
+const getResponse = async (inputtedText, createLaunchWindow) => {
   const [command, ...args] = inputtedText.split(' ')
   switch (command) {
     case commands.help.flag:
@@ -102,7 +106,7 @@ const getResponse = (inputtedText, openWindow) => {
 
     case commands.launch.flag:
     case commands.launch.name:
-      return createLaunchResponse(args, openWindow)
+      return await createLaunchResponse(args, createLaunchWindow)
 
     default:
       return createDefaultResponse()
