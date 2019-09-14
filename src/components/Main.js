@@ -59,10 +59,9 @@ const Main = () => {
       <Icon windowName={windowNames.About} openWindow={openWindow} />
       <Icon windowName={windowNames.Projects} openWindow={openWindow} />
       <Icon windowName={windowNames.Contact} openWindow={openWindow} />
-      {windows.map(Window => {
-        console.log('SLOPOKE', Window.name)
-        return <Window key={Window.name} makeWindowActive={makeWindowActive} />
-      })}
+      {windows.map(Window => (
+        <Window key={Window.name} makeWindowActive={makeWindowActive} />
+      ))}
     </StyledDiv>
   )
 }
