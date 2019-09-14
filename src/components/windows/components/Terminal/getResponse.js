@@ -48,7 +48,7 @@ const createHelpResponse = () =>
 const createLaunchResponse = ([unsanitizedWindowName], createLaunchWindow) => {
   const windowName = _.startCase(unsanitizedWindowName)
 
-  const { terminal: terminalWindowName, ...launchableWindowNames } = windowNames
+  const { Terminal: terminalWindowName, ...launchableWindowNames } = windowNames
 
   if (windowName === terminalWindowName) {
     // TODO: add alternate snarky responses
