@@ -35,8 +35,8 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] Active Window on top
 - [x] Other Icons
 - [x] Change starting position of new windows
-- [] launch windows with terminal
 - [x] fix terminal commands
+- [] launch windows with terminal
 - [] Re-export images
 - [] Clean Up Code
 - [] Make Theme
