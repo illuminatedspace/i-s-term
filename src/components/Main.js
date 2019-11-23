@@ -61,7 +61,7 @@ const Main = () => {
         createLaunchWindow={createLaunchWindow}
       />
       <Icon
-        windowName={windowNames.Projects}
+        windowName={windowNames.Resume}
         createLaunchWindow={createLaunchWindow}
       />
       <Icon
