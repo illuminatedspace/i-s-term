@@ -44,15 +44,16 @@ _All the technologies you, a citizen of the internet age, crave_
 - [] Projects -> Resume
 - [] Upload resume
 - [] Re-export images
-- [] Clean Up Code
-- [] Tests?
+
 - [] Host static site
 - [] Connect Domain
 - [] Launch Site 🎉
-- [] Projects
 
 - [] Simplified Mobile Version
 
+- [] Actual Projects
+- [] Clean Up Code
+- [] Tests?
 - [] Contact Form
 - [] Make Theme
 - [] Close windows?
