@@ -18,6 +18,7 @@ const mainTheme = {
     background: colors.purple.darkTransparent,
     border: borders.windowBorder,
     text: colors.orange.medium,
+    link: colors.blue.medium,
   },
 
   icon: {

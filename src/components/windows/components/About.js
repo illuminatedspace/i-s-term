@@ -3,9 +3,28 @@ import styled from 'styled-components'
 
 import Window from '../../Window/Window'
 import { windowNames } from '../_consts'
+import { StyledLink } from '../../styled'
 
 const AboutDiv = styled.div`
   padding: 1em;
+`
+
+const PictureDiv = styled.div`
+  width: 200px;
+  height: 250px;
+  background: MediumPurple;
+  color: #111;
+  text-align: center;
+  float: left;
+  margin-right: 1em;
+`
+
+const ContactLi = styled.li`
+  margin-bottom: 0;
+`
+
+const ContactUl = styled.ul`
+  list-style: none;
 `
 
 const About = ({ makeWindowActive }) => (
@@ -15,25 +34,53 @@ const About = ({ makeWindowActive }) => (
     shouldScroll={true}
   >
     <AboutDiv>
+      <PictureDiv />
       <p>
         Liz was born and raised in Las Vegas, NV as the oldest but not at all
         tallest sibling. She currently resides in the bustling metropolis of New
-        York City, NY. In May of 2016 she graduated from Temple University with
-        her M.F.A., which keeps her B.F.A. in Production Design from SCAD warm.
-        She enjoys strong coffee, old literature, acrylic paints, fiction of the
-        science variety, and rainy days.
+        York City, NY. In April 2017 she graduated from the Grace Hopper Program
+        at Fullstack Academy with a certificate in Full Stack Engineering, which
+        keeps her M.F.A. in Theater-Design from Temple University, and her
+        B.F.A. in Production Design from SCAD warm. She enjoys strong coffee,
+        old literature, acrylic paints, fiction of the science variety, and warm
+        sunny days.
       </p>
       <p>
         Her video game knowledge is extensive, and on a good weekend you can
-        find her reading programming books in the sun.
+        find her skating in the sun.
       </p>
       <p>
         She does not enjoy snow or talking about herself in the third person but
         both can be tolerated.
       </p>
       <p>
-        Connect with her on: LinkedIn - /lizkristinaphillips Twitter -
-        @ampsvoltswatts
+        Connect with her on:
+        <ContactUl>
+          <ContactLi>
+            LinkedIn -{' '}
+            <StyledLink href="https://www.linkedin.com/in/lizkristinaphillips">
+              in/lizkristinaphillips
+            </StyledLink>
+          </ContactLi>
+          <ContactLi>
+            Twitter -{' '}
+            <StyledLink href="https://twitter.com/lizcodes">
+              @LizCodes
+            </StyledLink>
+          </ContactLi>
+          <ContactLi>
+            GitHub -{' '}
+            <StyledLink href="https://github.com/illuminatedspace">
+              IlluminatedSpace
+            </StyledLink>
+          </ContactLi>
+          <ContactLi>
+            Twitch -{' '}
+            <StyledLink href="https://www.twitch.tv/illuminatedspace">
+              IlluminatedSpace
+            </StyledLink>
+          </ContactLi>
+        </ContactUl>
       </p>
     </AboutDiv>
   </Window>
