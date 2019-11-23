@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
 
 import './layout.css'
-import inconsolata from 'typeface-inconsolata'
 import { mainTheme } from '../styles'
 
 import smallFavicon from '../images/small-favicon.png'
