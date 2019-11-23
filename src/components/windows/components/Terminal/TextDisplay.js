@@ -37,12 +37,7 @@ const TextDisplay = ({ lines }) => {
     stayScrolled()
   }, [lines.length])
 
-  return (
-    <TextDisplayDiv ref={textDisplayDivRef}>
-      <h1>Hi Twitch!</h1>
-      {lines}
-    </TextDisplayDiv>
-  )
+  return <TextDisplayDiv ref={textDisplayDivRef}>{lines}</TextDisplayDiv>
 }
 
 Layout.propTypes = {
