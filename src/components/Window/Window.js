@@ -17,13 +17,7 @@ const StyledDiv = styled.div`
   width: 100%;
 `
 
-const ScrollingStyledDiv = styled.div`
-  border: ${props => props.theme.window.border};
-  font-family: ${props => props.theme.fontFamily};
-  background-color: ${props => props.theme.window.background};
-  color: ${props => props.theme.window.text};
-  height: calc(100% - 35px);
-  width: 100%;
+const ScrollingStyledDiv = styled(StyledDiv)`
   overflow-y: scroll;
   ::-webkit-scrollbar {
     background-color: ${props => props.theme.window.bar};
