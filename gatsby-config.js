@@ -1,24 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Terminal Website',
-    menuLinks: [
-      {
-        name: 'home',
-        link: '/',
-      },
-      {
-        name: 'resume',
-        link: '/resume',
-      },
-      {
-        name: 'projects',
-        link: '/projects',
-      },
-      {
-        name: 'about',
-        link: '/about',
-      },
-    ],
+    title: 'Liz Phillips - Full Stack Software Engineer & Code Witch',
+    description:
+      'Portfolio website for Liz Phillips, full stack software engineer in New York City, NY.',
+    url: 'https://www.lizkristinaphillips.com',
+    image: '/PreviewIcon.png',
+    twitterUsername: '@lizCodes',
+    keywords: 'full stack, developer, web, development, new york, nyc',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -31,7 +19,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        // icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: '/PreviewIcon.png',
       },
     },
     'gatsby-plugin-offline',

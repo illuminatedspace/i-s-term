@@ -7,6 +7,10 @@ import './layout.css'
 import inconsolata from 'typeface-inconsolata'
 import { mainTheme } from '../styles'
 
+import smallFavicon from '../images/small-favicon.png'
+import medFavicon from '../images/med-favicon.png'
+import largeFavicon from '../images/large-favicon.png'
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -14,17 +18,59 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            description
+            url
+            image
+            twitterUsername
+            keywords
           }
         }
       }
     `}
-    render={data => (
+    render={({
+      site: {
+        siteMetadata: {
+          title: defaultTitle,
+          description: defaultDescription,
+          url: siteUrl,
+          image: defaultImage,
+          twitterUsername,
+          keywords,
+        },
+      },
+    }) => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={defaultTitle}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: defaultDescription },
+            { name: 'image', content: defaultImage },
+            { name: 'url', content: siteUrl },
+            { name: 'keywords', content: keywords },
+            { name: 'twitter:creator', content: twitterUsername },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            { name: 'twitter:title', content: defaultTitle },
+            { name: 'twitter:description', content: defaultDescription },
+            { name: 'twitter:image', content: defaultImage },
+          ]}
+          link={[
+            {
+              rel: 'icon',
+              type: 'image/png',
+              sizes: '16x16',
+              href: `${smallFavicon}`,
+            },
+            {
+              rel: 'icon',
+              type: 'image/png',
+              sizes: '32x32',
+              href: `${medFavicon}`,
+            },
+            {
+              rel: 'shortcut icon',
+              type: 'image/png',
+              href: `${largeFavicon}`,
+            },
           ]}
         >
           <html lang="en" />
