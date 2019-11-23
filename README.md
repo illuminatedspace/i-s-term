@@ -39,8 +39,8 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] launch windows with terminal
 - [x] terminal broken, fix terminal
 - [] Starting text for terminal
-- [] Contact Page
 - [] About Page
+- [] Contact Page
 - [] Projects -> Resume
 - [] Upload resume
 - [] Re-export images
