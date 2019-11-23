@@ -40,7 +40,7 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] terminal broken, fix terminal
 - [x] Starting text for terminal
 - [x] About Page
-- [] Contact Page
+- [x] Contact Page
 - [] Projects -> Resume
 - [] Upload resume
 - [] Re-export images
