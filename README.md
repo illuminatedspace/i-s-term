@@ -52,6 +52,7 @@ _All the technologies you, a citizen of the internet age, crave_
 
 - [] Simplified Mobile Version
 
+- [] Show resume in resume window with iFrame or otherwise
 - [] Resume Icon
 - [] Actual Projects
 - [] Clean Up Code
