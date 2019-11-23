@@ -36,19 +36,23 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] Other Icons
 - [x] Change starting position of new windows
 - [x] fix terminal commands
-- [] launch windows with terminal
-- [] Re-export images
+- [x] launch windows with terminal
+- [x] terminal broken, fix terminal
 - [] Clean Up Code
-- [] Make Theme
-
-- [] Close windows?
-- [] Drag and drop icons?
-- [] Refactor window creation, just pass guts of window, and then don't have to pass `makeWindowActive` in every window component
-- [] Look into creating SVGs of icons to apply on hover directly to component
+- [] Starting text for terminal
 - [] Contact Page
 - [] About Page
+- [] Projects -> Resume
+- [] Upload resume
+- [] Re-export images
 - [] Host static site
 - [] Connect Domain
 - [] Launch Site 🎉
 - [] Projects
+
+- [] Make Theme
+- [] Close windows?
+- [] Drag and drop icons?
+- [] Refactor window creation, just pass guts of window, and then don't have to pass `makeWindowActive` in every window component
+- [] Look into creating SVGs of icons to apply on hover directly to component
 - [] Resume (2.0)
