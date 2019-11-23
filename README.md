@@ -45,7 +45,7 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] Upload resume
 - [x] Add picture to about
 - [x] Re-export images
-- [] Check helmet tags/seo/page title
+- [x] Check helmet tags/seo/page title
 
 - [] Host static site
 - [] Connect Domain
