@@ -42,9 +42,9 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] About Page
 - [x] Contact Page
 - [x] Projects -> Resume
-- [] Upload resume
+- [x] Upload resume
+- [x] Add picture to about
 - [] Re-export images
-- [] Add picture to about
 
 - [] Host static site
 - [] Connect Domain
