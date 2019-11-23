@@ -4,15 +4,14 @@ import styled from 'styled-components'
 import Window from '../../Window/Window'
 import { windowNames } from '../_consts'
 import { StyledLink, PaddedWindowDiv } from '../../styled'
+import aboutMePic from '../../../images/aboutMePic.jpg'
 
-const PictureDiv = styled.div`
+const StyledImg = styled.img`
   width: 200px;
-  height: 250px;
-  background: MediumPurple;
-  color: #111;
   text-align: center;
   float: left;
   margin-right: 1em;
+  margin-bottom: 0;
 `
 
 const ContactLi = styled.li`
@@ -30,7 +29,10 @@ const About = ({ makeWindowActive }) => (
     shouldScroll={true}
   >
     <PaddedWindowDiv>
-      <PictureDiv />
+      <StyledImg
+        src={aboutMePic}
+        alt="A fierce picture of me with purple lipstick"
+      />
       <p>
         Liz was born and raised in Las Vegas, NV as the oldest but not at all
         tallest sibling. She currently resides in the bustling metropolis of New
