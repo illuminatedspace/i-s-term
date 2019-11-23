@@ -51,6 +51,8 @@ _All the technologies you, a citizen of the internet age, crave_
 - [] Launch Site 🎉
 - [] Projects
 
+- [] Simplified Mobile Version
+
 - [] Make Theme
 - [] Close windows?
 - [] Drag and drop icons?
