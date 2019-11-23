@@ -39,7 +39,7 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] launch windows with terminal
 - [x] terminal broken, fix terminal
 - [x] Starting text for terminal
-- [] About Page
+- [x] About Page
 - [] Contact Page
 - [] Projects -> Resume
 - [] Upload resume
