@@ -44,6 +44,7 @@ _All the technologies you, a citizen of the internet age, crave_
 - [] Projects -> Resume
 - [] Upload resume
 - [] Re-export images
+- [] Add picture to about
 
 - [] Host static site
 - [] Connect Domain
@@ -51,9 +52,10 @@ _All the technologies you, a citizen of the internet age, crave_
 
 - [] Simplified Mobile Version
 
+- [] Resume Icon
 - [] Actual Projects
 - [] Clean Up Code
-- [] Tests?
+- [] Tests? (Look into Cypress)
 - [] Contact Form
 - [] Make Theme
 - [] Close windows?
