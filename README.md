@@ -39,6 +39,7 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] launch windows with terminal
 - [x] terminal broken, fix terminal
 - [] Clean Up Code
+- [] Tests?
 - [] Starting text for terminal
 - [] Contact Page
 - [] About Page
