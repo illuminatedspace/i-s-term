@@ -3,11 +3,7 @@ import styled from 'styled-components'
 
 import Window from '../../Window/Window'
 import { windowNames } from '../_consts'
-import { StyledLink } from '../../styled'
-
-const AboutDiv = styled.div`
-  padding: 1em;
-`
+import { StyledLink, PaddedWindowDiv } from '../../styled'
 
 const PictureDiv = styled.div`
   width: 200px;
@@ -33,7 +29,7 @@ const About = ({ makeWindowActive }) => (
     windowName={windowNames.About}
     shouldScroll={true}
   >
-    <AboutDiv>
+    <PaddedWindowDiv>
       <PictureDiv />
       <p>
         Liz was born and raised in Las Vegas, NV as the oldest but not at all
@@ -82,7 +78,7 @@ const About = ({ makeWindowActive }) => (
           </ContactLi>
         </ContactUl>
       </p>
-    </AboutDiv>
+    </PaddedWindowDiv>
   </Window>
 )
 
