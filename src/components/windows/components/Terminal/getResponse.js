@@ -33,15 +33,14 @@ const createHelpResponse = () =>
     (acc, { name, flag, description }) => {
       return [
         ...acc,
-        <TextNode text={`${name}, ${flag}`} key={`${name}-command`} />,
-        <TextNode text={description} key={`${name}-description`} />,
+        <TextNode key={`${name}-command`}>{`${name}, ${flag}`}</TextNode>,
+        <TextNode key={`${name}-description`}>{description}</TextNode>,
       ]
     },
     [
-      <TextNode
-        text="Here are all the commands available:"
-        key={'command-available'}
-      />,
+      <TextNode key={'command-available'}>
+        Here are all the commands available:
+      </TextNode>,
     ]
   )
 
@@ -56,37 +55,32 @@ const createLaunchResponse = ([unsanitizedWindowName], createLaunchWindow) => {
     // "Maybe you didn't realize, this IS the terminal."
     // "Baby, there can only be one."
     return [
-      <TextNode text="Surely you don't need two..." key="snarky-response" />,
+      <TextNode key="snarky-response">
+        Surely you don&apos;t need two...
+      </TextNode>,
     ]
   }
 
   const launchableWindowNameArray = Object.keys(launchableWindowNames)
   if (!launchableWindowNameArray.includes(windowName)) {
     return [
-      <TextNode
-        text="I don't recognize that window name."
-        key="unrecognized-window"
-      />,
-      <TextNode
-        text={`Here's the list of windows you can launch: ${launchableWindowNameArray.join(
-          ' '
-        )}`}
-        key="window-names"
-      />,
+      <TextNode key="unrecognized-window">
+        "I don't recognize that window name."
+      </TextNode>,
+      <TextNode key="window-names">{`Here's the list of windows you can launch: ${launchableWindowNameArray.join(
+        ' '
+      )}`}</TextNode>,
     ]
   }
 
   createLaunchWindow(windowName)()
 
-  return [<TextNode key="launched-window" text={`launch ${windowName}`} />]
+  return [<TextNode key="launched-window">{`launch ${windowName}`}</TextNode>]
 }
 
 const createDefaultResponse = () => [
-  <TextNode text="Sorry, I did not understand that command." key="sorry" />,
-  <TextNode
-    text={`Type "help" to see a list of accepted commands.`}
-    key="type-help"
-  />,
+  <TextNode key="sorry">"Sorry, I did not understand that command."</TextNode>,
+  <TextNode key="type-help">{`Type "help" to see a list of accepted commands.`}</TextNode>,
 ]
 
 /**

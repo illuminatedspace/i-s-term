@@ -21,8 +21,8 @@ const NoMarginBottomParagraph = styled.p`
   margin-bottom: 0;
 `
 
-export const TextNode = ({ text }) => (
-  <NoMarginBottomParagraph>{text}</NoMarginBottomParagraph>
+export const TextNode = ({ children }) => (
+  <NoMarginBottomParagraph>{children}</NoMarginBottomParagraph>
 )
 
 export const TextNodeCollection = ({ children, type }) => {
