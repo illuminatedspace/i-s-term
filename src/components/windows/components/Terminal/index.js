@@ -24,7 +24,7 @@ const startingLine = key => (
   <TextNodeCollection key={key}>
     <TextNode>
       Hello. Welcome to my site. Feel free to click on the icons to the left to
-      launch windows, or type "help" to see commands in the terminal.
+      launch windows, or type &quot;help&quot; to see commands in the terminal.
     </TextNode>
   </TextNodeCollection>
 )
