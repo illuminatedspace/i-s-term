@@ -10,9 +10,16 @@ const Resume = ({ makeWindowActive }) => (
     shouldScroll={true}
   >
     <PaddedWindowDiv>
-      <StyledLink href="" target="blank" rel="noopener noreferrer">
-        Download Resume
+      <StyledLink href="/LizPhillips_Resume 2019.11.20.pdf" target="_blank">
+        Download the Resume
       </StyledLink>
+      <iframe
+        id="resumeIframe"
+        title="Resume"
+        width="100%"
+        height="733px"
+        src="/LizPhillips_Resume 2019.11.20.pdf"
+      />
     </PaddedWindowDiv>
   </Window>
 )
