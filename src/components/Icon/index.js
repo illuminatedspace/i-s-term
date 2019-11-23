@@ -5,6 +5,7 @@ import { iconStates } from '../windows/_consts'
 const IconDiv = styled.div`
   display: grid;
   width: 100px;
+  margin-top: 0.25em;
 `
 
 const IconImg = styled.img`
