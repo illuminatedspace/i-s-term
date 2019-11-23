@@ -38,14 +38,14 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] fix terminal commands
 - [x] launch windows with terminal
 - [x] terminal broken, fix terminal
-- [] Clean Up Code
-- [] Tests?
 - [] Starting text for terminal
 - [] Contact Page
 - [] About Page
 - [] Projects -> Resume
 - [] Upload resume
 - [] Re-export images
+- [] Clean Up Code
+- [] Tests?
 - [] Host static site
 - [] Connect Domain
 - [] Launch Site 🎉
