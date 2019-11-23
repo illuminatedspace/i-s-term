@@ -41,7 +41,7 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] Starting text for terminal
 - [x] About Page
 - [x] Contact Page
-- [] Projects -> Resume
+- [x] Projects -> Resume
 - [] Upload resume
 - [] Re-export images
 - [] Add picture to about
