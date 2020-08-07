@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Window from '../../Window/Window'
+import DragabbleWindow from '../../DraggableWindow/DraggableWindow'
 import { windowNames } from '../_consts'
 import { StyledLink, PaddedWindowDiv } from '../../styled'
 import aboutMePic from '../../../images/aboutMePic.jpg'
@@ -23,7 +23,7 @@ const ContactUl = styled.ul`
 `
 
 const About = ({ makeWindowActive }) => (
-  <Window
+  <DragabbleWindow
     makeWindowActive={makeWindowActive}
     windowName={windowNames.About}
     shouldScroll={true}
@@ -81,7 +81,7 @@ const About = ({ makeWindowActive }) => (
         </ContactUl>
       </p>
     </PaddedWindowDiv>
-  </Window>
+  </DragabbleWindow>
 )
 
 export default About

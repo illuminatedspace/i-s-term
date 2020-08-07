@@ -44,9 +44,11 @@ const Main = () => {
   }
 
   const makeWindowActive = windowName => {
-    const activeWindow = windows.find(window => window.name === windowName)
+    const activeWindow = windows.find(
+      desktopWindow => desktopWindow.name === windowName
+    )
     const windowsWithActiveAsLast = windows
-      .filter(window => window.name !== windowName)
+      .filter(desktopWindow => desktopWindow.name !== windowName)
       .concat([activeWindow])
 
     setWindows(windowsWithActiveAsLast)
@@ -68,9 +70,9 @@ const Main = () => {
         windowName={windowNames.Contact}
         createLaunchWindow={createLaunchWindow}
       />
-      {windows.map(Window => (
-        <Window
-          key={Window.name}
+      {windows.map(VisualWindow => (
+        <VisualWindow
+          key={VisualWindow.name}
           makeWindowActive={makeWindowActive}
           createLaunchWindow={createLaunchWindow}
         />

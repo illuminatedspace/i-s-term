@@ -1,10 +1,10 @@
 import React from 'react'
-import Window from '../../Window/Window'
+import DraggableWindow from '../../DraggableWindow/DraggableWindow'
 import { windowNames } from '../_consts'
 import { StyledLink, PaddedWindowDiv } from '../../styled'
 
 const Resume = ({ makeWindowActive }) => (
-  <Window
+  <DraggableWindow
     makeWindowActive={makeWindowActive}
     windowName={windowNames.Resume}
     shouldScroll={true}
@@ -14,7 +14,7 @@ const Resume = ({ makeWindowActive }) => (
         Download the Resume
       </StyledLink>
     </PaddedWindowDiv>
-  </Window>
+  </DraggableWindow>
 )
 
 export default Resume
