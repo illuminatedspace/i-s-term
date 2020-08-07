@@ -26,7 +26,7 @@ const Icon = ({ createLaunchWindow, windowName }) => {
 
   const getIcon = async (windowName, iconState) => {
     const { default: icon } = await import(
-      `../../images/${windowName}-${iconState}.png`
+      `../../images/${windowName.toLowerCase()}-${iconState}.png`
     )
 
     if (currentIconImage !== icon) {

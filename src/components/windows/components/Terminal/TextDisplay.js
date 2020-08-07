@@ -41,7 +41,7 @@ const TextDisplay = ({ lines }) => {
 }
 
 Layout.propTypes = {
-  lines: PropTypes.array.isRequired,
+  lines: PropTypes.array,
 }
 
 export default TextDisplay
