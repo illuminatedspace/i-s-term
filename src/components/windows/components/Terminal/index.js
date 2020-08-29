@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import TextInput from './TextInput'
 import getResponse from './getResponse'
 import TextDisplay from './TextDisplay'
-import Window from '../../../Window/Window'
+import DraggableWindow from '../../../DraggableWindow/DraggableWindow'
 import { textNodeType } from './const'
 import { windowNames } from '../../_consts'
 import { TextNodeCollection, TextNode } from './TerminalText'
@@ -40,14 +40,14 @@ const Terminal = ({ makeWindowActive, createLaunchWindow }) => {
     </TextNodeCollection>
   )
 
-  const parseCommand = async command => {
+  const parseCommand = command => {
     const commandIndex = lines.length
     const commandLine = buildLine({
       command: prefixCommand(command),
       index: commandIndex,
       type: textNodeType.command,
     })
-    const response = await getResponse(command, createLaunchWindow)
+    const response = getResponse(command, createLaunchWindow)
     const responseLine = buildLine({
       command: response,
       index: commandIndex + 1,
@@ -57,7 +57,7 @@ const Terminal = ({ makeWindowActive, createLaunchWindow }) => {
   }
 
   return (
-    <Window
+    <DraggableWindow
       startingPosition={{ x: 175, y: 20, width: 500, height: 300 }}
       makeWindowActive={makeWindowActive}
       windowName={windowNames.Terminal}
@@ -66,7 +66,7 @@ const Terminal = ({ makeWindowActive, createLaunchWindow }) => {
         <TextDisplay lines={lines} />
         <TextInput parseCommand={parseCommand} />
       </GridWrapperDiv>
-    </Window>
+    </DraggableWindow>
   )
 }
 

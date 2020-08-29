@@ -1,10 +1,10 @@
 import React from 'react'
-import Window from '../../Window/Window'
+import DraggableWindow from '../../DraggableWindow/DraggableWindow'
 import { windowNames } from '../_consts'
 import { StyledLink, PaddedWindowDiv } from '../../styled'
 
 const Contact = ({ makeWindowActive }) => (
-  <Window
+  <DraggableWindow
     makeWindowActive={makeWindowActive}
     windowName={windowNames.Contact}
     shouldScroll={true}
@@ -28,7 +28,7 @@ const Contact = ({ makeWindowActive }) => (
         Send Me an Email
       </StyledLink>
     </PaddedWindowDiv>
-  </Window>
+  </DraggableWindow>
 )
 
 export default Contact

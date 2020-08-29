@@ -21,8 +21,7 @@ export const yellow = {
 }
 
 export const orange = {
-  light: 'rgb(255, 212, 168)',
-  medium: '#FFD4A8',
+  medium: 'rgb(255, 212, 168)',
   dark: 'rgb(195, 147, 30)',
 }
 

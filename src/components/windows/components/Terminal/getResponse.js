@@ -91,7 +91,7 @@ const createDefaultResponse = () => [
 // TODO: handle displaying arguments for help command with "launch"
 // launch contact
 // ['launch', 'contact']
-const getResponse = async (inputtedText, createLaunchWindow) => {
+const getResponse = (inputtedText, createLaunchWindow) => {
   const [command, ...args] = inputtedText.split(' ')
   switch (command) {
     case commands.help.flag:
@@ -100,7 +100,7 @@ const getResponse = async (inputtedText, createLaunchWindow) => {
 
     case commands.launch.flag:
     case commands.launch.name:
-      return await createLaunchResponse(args, createLaunchWindow)
+      return createLaunchResponse(args, createLaunchWindow)
 
     default:
       return createDefaultResponse()

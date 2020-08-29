@@ -1,11 +1,14 @@
 import React from 'react'
-import Window from '../../Window/Window'
+import DraggableWindow from '../../DraggableWindow/DraggableWindow'
 import { windowNames } from '../_consts'
 
 const Projects = ({ makeWindowActive }) => (
-  <Window makeWindowActive={makeWindowActive} windowName={windowNames.Projects}>
+  <DraggableWindow
+    makeWindowActive={makeWindowActive}
+    windowName={windowNames.Projects}
+  >
     {'These are projects.'}
-  </Window>
+  </DraggableWindow>
 )
 
 export default Projects

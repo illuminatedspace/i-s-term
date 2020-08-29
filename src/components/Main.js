@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
 
 import Terminal from './windows/components/Terminal'
+import About from './windows/components/About'
+import Contact from './windows/components/Contact'
+import Resume from './windows/components/Resume'
 import Icon from './Icon'
 import { windowNames } from './windows/_consts'
 
@@ -10,49 +12,33 @@ const StyledDiv = styled.div`
   font-family: ${props => props.theme.fontFamily};
 `
 
+const windowNameToComponent = {
+  [windowNames.Terminal]: Terminal,
+  [windowNames.About]: About,
+  [windowNames.Contact]: Contact,
+  [windowNames.Resume]: Resume,
+}
+
 const Main = () => {
-  const queryData = useStaticQuery(graphql`
-    query {
-      allFile(
-        filter: { relativePath: { glob: "components/windows/components/*" } }
-      ) {
-        nodes {
-          name
-          relativePath
-          sourceInstanceName
-        }
-      }
-    }
-  `)
-
   const isWindowLaunched = windowName =>
-    windows.some(({ name }) => name === windowName)
+    windows.some(name => name === windowName)
 
-  const createLaunchWindow = windowName => async () => {
+  const createLaunchWindow = windowName => () => {
     if (!isWindowLaunched(windowName)) {
-      const { relativePath } = queryData.allFile.nodes
-        .filter(node => node.name === windowName)
-        .pop()
-
-      // Chop off the word 'components' from the realtivePath.
-      const componentModule = await import('.' + relativePath.slice(10))
-
-      const component = componentModule.default
-
-      setWindows([...windows, component])
+      setWindows([...windows, windowName])
     }
   }
 
   const makeWindowActive = windowName => {
-    const activeWindow = windows.find(window => window.name === windowName)
-    const windowsWithActiveAsLast = windows
-      .filter(window => window.name !== windowName)
-      .concat([activeWindow])
+    const filteredWindows = windows.filter(
+      desktopWindow => desktopWindow !== windowName
+    )
+    const windowsWithActiveAsLast = filteredWindows.concat([windowName])
 
     setWindows(windowsWithActiveAsLast)
   }
 
-  const [windows, setWindows] = useState([Terminal])
+  const [windows, setWindows] = useState([windowNames.Terminal])
 
   return (
     <StyledDiv>
@@ -68,13 +54,16 @@ const Main = () => {
         windowName={windowNames.Contact}
         createLaunchWindow={createLaunchWindow}
       />
-      {windows.map(Window => (
-        <Window
-          key={Window.name}
-          makeWindowActive={makeWindowActive}
-          createLaunchWindow={createLaunchWindow}
-        />
-      ))}
+      {windows.map(windowName => {
+        const WindowComponent = windowNameToComponent[windowName]
+        return (
+          <WindowComponent
+            key={windowName}
+            makeWindowActive={makeWindowActive}
+            createLaunchWindow={createLaunchWindow}
+          />
+        )
+      })}
     </StyledDiv>
   )
 }

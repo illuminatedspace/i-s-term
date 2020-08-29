@@ -9,8 +9,8 @@ module.exports = {
     keywords: 'full stack, developer, web, development, new york, nyc',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -31,7 +31,7 @@ const ScrollingStyledDiv = styled(StyledDiv)`
   }
 `
 
-const Window = ({ children, windowName, shouldScroll }) => {
+const WindowContent = ({ children, windowName, shouldScroll }) => {
   const DivComponent = createStyledDiv(shouldScroll)
   return (
     <>
@@ -60,7 +60,7 @@ const DraggableWindow = ({
       props.makeWindowActive(props.windowName)
     }}
   >
-    <Window {...props} />
+    <WindowContent {...props} />
   </Rnd>
 )
 
