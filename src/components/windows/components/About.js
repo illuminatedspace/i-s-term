@@ -51,35 +51,31 @@ const About = ({ makeWindowActive }) => (
         She does not enjoy snow or talking about herself in the third person but
         both can be tolerated.
       </p>
-      <p>
-        Connect with her on:
-        <ContactUl>
-          <ContactLi>
-            LinkedIn -{' '}
-            <StyledLink href="https://www.linkedin.com/in/lizkristinaphillips">
-              in/lizkristinaphillips
-            </StyledLink>
-          </ContactLi>
-          <ContactLi>
-            Twitter -{' '}
-            <StyledLink href="https://twitter.com/lizcodes">
-              @LizCodes
-            </StyledLink>
-          </ContactLi>
-          <ContactLi>
-            GitHub -{' '}
-            <StyledLink href="https://github.com/illuminatedspace">
-              IlluminatedSpace
-            </StyledLink>
-          </ContactLi>
-          <ContactLi>
-            Twitch -{' '}
-            <StyledLink href="https://www.twitch.tv/illuminatedspace">
-              IlluminatedSpace
-            </StyledLink>
-          </ContactLi>
-        </ContactUl>
-      </p>
+      <p>Connect with her on:</p>
+      <ContactUl>
+        <ContactLi>
+          LinkedIn -{' '}
+          <StyledLink href="https://www.linkedin.com/in/lizkristinaphillips">
+            in/lizkristinaphillips
+          </StyledLink>
+        </ContactLi>
+        <ContactLi>
+          Twitter -{' '}
+          <StyledLink href="https://twitter.com/lizcodes">@LizCodes</StyledLink>
+        </ContactLi>
+        <ContactLi>
+          GitHub -{' '}
+          <StyledLink href="https://github.com/illuminatedspace">
+            IlluminatedSpace
+          </StyledLink>
+        </ContactLi>
+        <ContactLi>
+          Twitch -{' '}
+          <StyledLink href="https://www.twitch.tv/illuminatedspace">
+            IlluminatedSpace
+          </StyledLink>
+        </ContactLi>
+      </ContactUl>
     </PaddedWindowDiv>
   </DragabbleWindow>
 )

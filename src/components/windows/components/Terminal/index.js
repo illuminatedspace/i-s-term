@@ -40,14 +40,14 @@ const Terminal = ({ makeWindowActive, createLaunchWindow }) => {
     </TextNodeCollection>
   )
 
-  const parseCommand = async command => {
+  const parseCommand = command => {
     const commandIndex = lines.length
     const commandLine = buildLine({
       command: prefixCommand(command),
       index: commandIndex,
       type: textNodeType.command,
     })
-    const response = await getResponse(command, createLaunchWindow)
+    const response = getResponse(command, createLaunchWindow)
     const responseLine = buildLine({
       command: response,
       index: commandIndex + 1,
