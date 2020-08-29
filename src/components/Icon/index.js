@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { iconStates } from '../windows/_consts'
+import { iconStates, windowNames } from '../windows/_consts'
+
+const descriptionByWindowName = {
+  [windowNames.About]: 'A magenta crystal ball.',
+  [windowNames.Resume]: 'A classic orange file folder.',
+  [windowNames.Contact]: 'A blue envelope.',
+}
 
 const IconDiv = styled.div`
   display: grid;
@@ -41,6 +47,7 @@ const Icon = ({ createLaunchWindow, windowName }) => {
   return (
     <IconDiv onDoubleClick={createLaunchWindow(windowName)}>
       <IconImg
+        alt={`${windowName} icon. ${descriptionByWindowName[windowName]}`}
         src={currentIconImage}
         onMouseOver={() => getIcon(windowName, iconStates.active)}
         onMouseOut={() => getIcon(windowName, iconStates.inactive)}

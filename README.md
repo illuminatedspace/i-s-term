@@ -47,7 +47,11 @@ _All the technologies you, a citizen of the internet age, crave_
 - [x] Re-export images
 - [x] Check helmet tags/seo/page title
 
-- [] Host static site
+- [x] Host static site
+- [] Acessibility
+  - [] Lighthouse audit
+  - [] Keyboard navigation
+  - [] Test with screen reader
 - [] Connect Domain
 - [] Launch Site 🎉
 
