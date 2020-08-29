@@ -6,7 +6,7 @@ import { windowNames } from '../../_consts'
 const commandNames = {
   help: 'help',
   launch: 'launch',
-  launchContact: 'launch contact',
+  tdhagotet: 'tdhagotet',
 }
 
 const commands = {
@@ -21,6 +21,11 @@ const commands = {
     arguments: [{ name: 'page', enum: ['projects', 'about', 'contact'] }],
     flag: '-l',
   },
+  [commandNames.tdhagotet]: {
+    name: commandNames.tdhagotet,
+    flag: '-g',
+    hide: true,
+  },
 }
 
 /*
@@ -30,7 +35,10 @@ const commands = {
 */
 const createHelpResponse = () =>
   Object.values(commands).reduce(
-    (acc, { name, flag, description }) => {
+    (acc, { name, flag, description, hide }) => {
+      if (hide) {
+        return acc
+      }
       return [
         ...acc,
         <TextNode key={`${name}-command`}>{`${name}, ${flag}`}</TextNode>,
@@ -78,6 +86,13 @@ const createLaunchResponse = ([unsanitizedWindowName], createLaunchWindow) => {
   return [<TextNode key="launched-window">{`launch ${windowName}`}</TextNode>]
 }
 
+const createTdhagotetResponse = () => [
+  <TextNode key={'ground-out'}>
+    On August 29, 2020 Thomas Dracaena hit a ground out to Edric Tosser.
+  </TextNode>,
+  <TextNode key="type-help">Ground is now out.</TextNode>,
+]
+
 const createDefaultResponse = () => [
   <TextNode key="sorry">"Sorry, I did not understand that command."</TextNode>,
   <TextNode key="type-help">{`Type "help" to see a list of accepted commands.`}</TextNode>,
@@ -101,6 +116,10 @@ const getResponse = (inputtedText, createLaunchWindow) => {
     case commands.launch.flag:
     case commands.launch.name:
       return createLaunchResponse(args, createLaunchWindow)
+
+    case commands.tdhagotet.flag:
+    case commands.tdhagotet.name:
+      return createTdhagotetResponse()
 
     default:
       return createDefaultResponse()
