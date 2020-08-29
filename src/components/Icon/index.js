@@ -15,9 +15,9 @@ const IconImg = styled.img`
 const IconTitleDiv = styled.div`
   background-color: ${props => props.theme.window.background};
   color: ${props => props.theme.text.quadentiary};
-  font-size: ${props => props.theme.icon.fontSize}
+  font-size: ${props => props.theme.icon.fontSize};
   text-align: center;
-  padding: .1em .5em 
+  padding: 0.1em 0.5em;
   font-weight: bold;
 `
 
