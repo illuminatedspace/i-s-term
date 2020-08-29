@@ -24,7 +24,7 @@ const TextInputWrapperDiv = styled.div`
 const StyledInput = styled.input`
   background: rgba(0, 0, 0, 0);
   border: none;
-  color: ${props => props.theme.text.primary}
+  color: ${props => props.theme.text.primary};
   width: 100%;
   height: 100%;
 `
