@@ -74,18 +74,19 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <div
+        <main
           style={{
             margin: '0 auto',
             maxWidth: 960,
             padding: '0px 1.0875rem 1.45rem',
             paddingTop: 0,
+            fontFamily: 'inconsolata',
           }}
         >
           <ThemeProvider theme={mainTheme}>
             <>{children}</>
           </ThemeProvider>
-        </div>
+        </main>
       </>
     )}
   />

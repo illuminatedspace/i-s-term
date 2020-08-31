@@ -36,7 +36,7 @@ const Main = () => {
   const [windows, setWindows] = useState([windowNames.Terminal])
 
   return (
-    <StyledDiv>
+    <>
       <Icon
         windowName={windowNames.About}
         createLaunchWindow={createLaunchWindow}
@@ -59,7 +59,7 @@ const Main = () => {
           />
         )
       })}
-    </StyledDiv>
+    </>
   )
 }
 
