@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 
 import Terminal from './windows/components/Terminal'
 import About from './windows/components/About'
@@ -7,10 +6,6 @@ import Contact from './windows/components/Contact'
 import Resume from './windows/components/Resume'
 import Icon from './Icon'
 import { windowNames } from './windows/_consts'
-
-const StyledDiv = styled.div`
-  font-family: ${props => props.theme.fontFamily};
-`
 
 const windowNameToComponent = {
   [windowNames.Terminal]: Terminal,

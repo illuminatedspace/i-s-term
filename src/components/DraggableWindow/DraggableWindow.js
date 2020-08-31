@@ -10,7 +10,6 @@ const createStyledDiv = shouldScroll =>
 
 const StyledDiv = styled.div`
   border: ${props => props.theme.window.border};
-  font-family: ${props => props.theme.fontFamily};
   background-color: ${props => props.theme.window.background};
   color: ${props => props.theme.window.text};
   height: calc(100% - 35px);
