@@ -8,10 +8,12 @@ const descriptionByWindowName = {
   [windowNames.Contact]: 'A blue envelope.',
 }
 
-const IconDiv = styled.div`
+const IconDiv = styled.button`
   display: grid;
   width: 100px;
   margin-top: 0.25em;
+  background-color: transparent;
+  border: none;
 `
 
 const IconImg = styled.img`
@@ -45,7 +47,11 @@ const Icon = ({ createLaunchWindow, windowName }) => {
   }, [])
 
   return (
-    <IconDiv onDoubleClick={createLaunchWindow(windowName)}>
+    <IconDiv
+      type="button"
+      name={`${windowName} launch button`}
+      onDoubleClick={createLaunchWindow(windowName)}
+    >
       <IconImg
         alt={`${windowName} icon. ${descriptionByWindowName[windowName]}`}
         src={currentIconImage}
