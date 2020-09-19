@@ -38,21 +38,25 @@ const Main = () => {
   return (
     <>
       <Icon
+        srIndex={1}
         windowName={windowNames.About}
         createLaunchWindow={createLaunchWindow}
       />
       <Icon
+        srIndex={2}
         windowName={windowNames.Resume}
         createLaunchWindow={createLaunchWindow}
       />
       <Icon
+        srIndex={3}
         windowName={windowNames.Contact}
         createLaunchWindow={createLaunchWindow}
       />
-      {windows.map(windowName => {
+      {windows.map((windowName, index) => {
         const WindowComponent = windowNameToComponent[windowName]
         return (
           <WindowComponent
+            srIndex={index}
             key={windowName}
             makeWindowActive={makeWindowActive}
             createLaunchWindow={createLaunchWindow}

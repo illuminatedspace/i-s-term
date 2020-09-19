@@ -34,7 +34,7 @@ const WindowContent = ({ children, windowName, shouldScroll }) => {
   const DivComponent = createStyledDiv(shouldScroll)
   return (
     <>
-      <WindowBar windowName={windowName} />
+      <WindowBar windowName="hello" />
       <DivComponent>{children}</DivComponent>
     </>
   )
@@ -58,6 +58,8 @@ const DraggableWindow = ({
     onMouseDown={() => {
       props.makeWindowActive(props.windowName)
     }}
+    aria-label={`${props.windowName} window`}
+    aria-live="polite"
   >
     <WindowContent {...props} />
   </Rnd>

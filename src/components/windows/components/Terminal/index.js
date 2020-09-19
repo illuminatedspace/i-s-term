@@ -63,7 +63,7 @@ const Terminal = ({ makeWindowActive, createLaunchWindow }) => {
       windowName={windowNames.Terminal}
     >
       <GridWrapperDiv>
-        <TextDisplay lines={lines} />
+        <TextDisplay lines={lines} aria-live />
         <TextInput parseCommand={parseCommand} />
       </GridWrapperDiv>
     </DraggableWindow>

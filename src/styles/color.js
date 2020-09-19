@@ -8,7 +8,7 @@ export const white = '#fff'
 
 export const purple = {
   dark: 'rgb(0, 2, 77)',
-  darkTransparent: 'rgba(0, 2, 77, 0.5)',
+  darkTransparent: 'rgba(0, 2, 77, 0.75)',
 
   // deprecated
   light: '#8f8aad',

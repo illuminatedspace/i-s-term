@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
 const WindowBar = ({ windowName }) => {
   return (
     <StyledDiv className={dragHandleClassName(windowName)}>
-      {windowName}
+      <h2>{windowName}</h2>
     </StyledDiv>
   )
 }
